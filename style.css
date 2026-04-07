@@ -1,0 +1,816 @@
+/* Layout */
+
+/* Variáveis */
+
+:root {
+    --rosa: #c2588c;
+    --preto: #000000;
+    --branco: #ffffff;
+    --rosaescuro: #af0848;
+    --dourado: #c2a362;
+    --rosaqueimado: #b27c71;
+    --rosaclarinho: #ffdade;
+}
+
+/* CSS - reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lobster", sans-serif;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: var(--rosaescuro);
+    padding: 10px 40px;
+    color: var(--branco);
+    border-radius: 30px;
+    border: 2px solid var(--rosa);
+}
+
+/* Cartão */
+.card {
+    width: 342px;
+    height: 480px;
+    background-color: var(--rosa);
+    margin-bottom: 25px;
+    border: 2px solid var(--rosaescuro);
+    text-align: center;
+    border-radius: 30px;
+}
+
+.card img {
+    border-radius: 30px 30px 0px 0px;
+    /* Coordenadas (encima, encima, embaixo, embaixo */
+}
+
+.card h2 {
+    font-size: 1.7rem;
+    margin: 15px 0px;
+    color: purple;
+}
+
+.card p {
+    color: var(--branco);
+    padding: 0px 15px 40px 30px;
+}
+
+#receitas #titulo {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: purple;
+    text-shadow:
+        -0.8px -0.8px 0 #fff,
+        0.8px -0.8px 0 #fff,
+        -0.8px 0.8px 0 #fff,
+        0.8px 0.8px 0 #fff;
+    text-align: center;
+}
+
+#receitas .btn {
+    font-size: 1.8rem;
+}
+
+/* Topo do site */
+
+#topo {
+    position: fixed;
+    right: 15px;
+    bottom: 10px;
+}
+
+#topo img {
+    height: 40px;
+    width: 40px;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+    /* Deixar os botões deslizando mais suavemente */
+}
+
+/* Fim do Layout*/
+
+
+/* Smartphone portrait */
+
+/* Cabeçalho */
+header {
+    height: 70px;
+    background-color: var(--rosaclarinho);
+}
+
+#logo img {
+    width: 128px;
+    height: 120px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#check {
+    display: none;
+}
+
+label {
+    color: rgba(224, 8, 170, 0.75);
+    font-size: 2.5rem;
+    font-weight: 900;
+    position: fixed;
+    right: 15px;
+    top: 5px;
+}
+
+nav ul {
+    height: 100vh;
+    background-color: rgba(250, 130, 250, 0.8);
+    position: fixed;
+    top: 70px;
+    right: -65%;
+    width: 65%;
+    transition: all 0.5s;
+}
+
+/* Ação para caixa check box */
+
+#check:checked~ul {
+    right: 0px;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--rosaclarinho);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--rosaescuro);
+}
+
+/* Principal */
+
+main {
+    height: 60vh;
+    background: url(./img/banner.jpg);
+    background-size: cover;
+
+
+}
+
+main .container {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1 {
+    color: var(--rosaescuro);
+    font-family: "Oleo Script", system-ui;
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+main h2 {
+    color: var(--rosaclarinho);
+    text-shadow: 0px 5px 10px var(--rosaescuro), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    font-family: "Lobster", sans-serif;
+    margin-bottom: 35px;
+}
+
+/* Destaque */
+#destaque {
+    padding: 50px 13px;
+    background: url(./img/bannerfundo.jpg);
+    background-size: cover;
+    background-position: -80px;
+}
+
+#destaque .container {
+    flex-direction: column;
+}
+
+#hero {
+    text-align: center;
+}
+
+#hero img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+
+#hero-text h2 {
+    margin-bottom: 15px;
+    color: var(--rosaescuro);
+    font-size: 2.7rem;
+    text-shadow: 0px 5px 10px var(--rosa), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+#hero-text p {
+    color: var(--preto);
+}
+
+.topics {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.topics p {
+    margin-left: 15px;
+    color: var(--rosaescuro);
+    text-shadow: 0px 5px 10px var(--branco), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sobre */
+
+#sobre {
+    padding: 40px 13px;
+    background-color: var(--rosaclarinho);
+}
+
+#sobre .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#sobre iframe {
+    width: 340px;
+    height: 191px;
+}
+
+#sobre p {
+    margin-bottom: 25px;
+}
+
+#sobre p {
+    color: var(--rosa);
+}
+
+#sobre h2 {
+    color: var(--dourado);
+    margin-bottom: 20px;
+}
+
+/* PDF/Cardápio */
+
+#pdf {
+    padding: 40px 13px;
+    background: url(./img/bannerfundo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#pdf .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#pdf img {
+    display: none;
+}
+
+#pdf h2 {
+    color: var(--rosaescuro);
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+}
+
+#pdf p {
+    margin-bottom: 50px;
+    color: var(--preto);
+    font-size: 1.2rem;
+}
+
+#pdf .btn {
+    font-size: 1.3rem;
+}
+
+/* Cartões */
+
+#receitas {
+    background-color: var(--rosaclarinho);
+    padding: 50px 0px 25px 0px;
+}
+
+#receitas .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contatos */
+
+#contato iframe {
+    display: none;
+}
+
+#contato .container {
+    flex-direction: column;
+}
+
+#contato {
+    background: url(./img/bannerfundo.jpg);
+    background-position: center;
+    background-size: cover;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+
+#bloco2 {
+    margin: 10px 0px 0px 20px;
+}
+
+#bloco2 img {
+    margin: 5px 0px;
+}
+
+#iconloc {
+    display: none;
+}
+
+#contato img {
+    align-items: center;
+    width: 35px;
+    height: 35px;
+}
+
+#bloco3 {
+    margin: 10px 0px 20px 20px;
+}
+
+#bloco3 img {
+    margin: 7px 0px;
+}
+
+#aviso {
+    margin-top: 40px;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-left: -10px;
+}
+
+/* Rodapé */
+
+#icons .container {
+    flex-direction: column-reverse;
+}
+
+#icons {
+    text-align: center;
+    background-color: var(--rosaclarinho);
+}
+
+#icons p {
+    color: var(--rosaescuro);
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+#icons img {
+    height: 40px;
+    width: 40px;
+    margin: 20px 3px;
+}
+
+
+
+
+
+
+/* Fim smartphone portrait*/
+
+/* Smarthphone landscape */
+@media (min-width: 576px) {
+
+    /* Layout */
+    .container {
+        max-width: 540px;
+    }
+
+    /* Cabeçalho */
+    nav ul {
+        width: 40%;
+        right: -40%;
+    }
+
+    /* Principal */
+    main {
+        height: 75vh;
+    }
+
+    main h1 {
+        font-size: 2.1rem;
+    }
+
+    main h2 {
+        font-size: 1.9rem;
+    }
+
+    /* Destaque */
+
+    #destaque {
+        padding: 50px 0px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #destaque .container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #hero {
+        text-align: left;
+    }
+
+    #hero img {
+        width: 200px;
+        height: 200px;
+        margin: 50px 40px 0px -30px;
+    }
+
+    .topics {
+        display: none;
+    }
+
+    /* Rodapé */
+
+    #icons .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #icons p {
+        margin: 10px 20px;
+    }
+
+}
+
+
+
+/* Fim - Smartphone landscape */
+
+/* Tablet portrait */
+@media (min-width: 768px) {
+
+    /* Layout */
+    .container {
+        max-width: 720px;
+    }
+
+    /* Cabeçalho */
+    nav ul {
+        width: 40%;
+        right: -40%;
+    }
+
+    /* Principal */
+    main h1 {
+        font-size: 3.1rem;
+    }
+
+    main h2 {
+        font-size: 2.9rem;
+    }
+
+    /* Sobre */
+
+    #hero img {
+        margin-left: 30px;
+    }
+
+    #youtube iframe {
+        width: 560px;
+        height: 315px;
+        margin-left: 20px;
+    }
+
+    /* Contatos */
+    #contato iframe {
+        display: flex;
+        margin: 20px;
+    }
+
+    #contato .container {
+        flex-direction: row-reverse;
+    }
+
+    #aviso2 {
+        display: none;
+    }
+
+    #iconloc {
+        display: flex;
+    }
+
+    #linkloc {
+        display: none;
+    }
+
+    #aviso {
+        font-size: 1.2rem;
+    }
+}
+
+/* Fim - Tablet portrait */
+
+/* Tablet landscape */
+@media (min-width: 992px) {
+
+    /* Layout */
+    .container {
+        max-width: 960px;
+    }
+
+    #youtube iframe {
+        width: 560px;
+        height: 315px;
+        margin-left: 20px;
+    }
+
+    /* Cartões */
+    #receitas .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card {
+        margin-right: 25px;
+    }
+
+    /* Contatos */
+    #aviso {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Fim - Tablet landscape */
+
+/* Notebook / PC */
+@media (min-width: 1200px) {
+
+    /* Layout */
+    .container {
+        max-width: 1140px;
+        justify-content: space-between;
+    }
+
+    /* Cabeçalho */
+    header {
+        height: 100px;
+    }
+
+    #logo img {
+        width: 194px;
+        height: 194px;
+    }
+
+    label {
+        display: none;
+    }
+
+    nav ul {
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        margin-top: 21px;
+    }
+
+    nav ul li {
+        border: 0;
+        float: left;
+
+    }
+
+    ul li a {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+
+    nav ul li a:hover {
+        color: var(--dourado)
+    }
+
+    /* Principal */
+
+    main {
+        height: 85vh;
+    }
+
+    main h1 {
+        font-size: 4.5rem;
+    }
+
+    main h2 {
+        font-size: 4rem;
+    }
+
+    .btn {
+        padding: 20px 40px;
+        font-size: 2.5rem;
+        border-radius: 50px;
+    }
+
+    /* Destaque */
+
+    #destaque {
+        background-attachment: fixed;
+    }
+
+    #hero img {
+        width: 400px;
+        height: 400px;
+    }
+
+    #hero-text h2 {
+        font-size: 2.7rem;
+    }
+
+    .topics {
+        display: flex;
+    }
+
+    #hero-text p {
+        font-size: 1.3rem;
+    }
+
+    /* Sobre */
+
+    #sobre .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #sobre p {
+        margin-right: 10px;
+    }
+
+    #youtube iframe {
+        width: 560px;
+        height: 315px;
+        margin-left: 20px;
+    }
+
+    /* PDF/Cardápio */
+
+    #pdf {
+        background-attachment: fixed;
+    }
+
+    #pdf img {
+        display: flex;
+        border-radius: 20%;
+        height: 300px;
+        width: 300px;
+    }
+
+    #pdf .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #pdf #text h2 {
+        font-size: 2.7rem;
+    }
+
+    #pdf #text p {
+        font-size: 1.3rem;
+    }
+
+    /* Cartões */
+    #receitas .container {
+        flex-direction: row;
+    }
+
+    .card {
+        margin-right: 0px;
+    }
+
+    /* Botão topo */
+
+    #topo img {
+        height: 60px;
+        width: 60px;
+    }
+
+    /*Contatos */
+
+    #bloco1,
+    #bloco2,
+    #bloco3 {
+        margin: 15px 50px;
+    }
+
+    #contato iframe {
+        display: flex;
+        border-radius: 35px;
+    }
+
+    #contato .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #linkloc {
+        display: none;
+    }
+
+    #iconloc {
+        display: flex;
+    }
+
+    #aviso {
+        display: none;
+    }
+
+    #aviso2 {
+        margin-top: 40px;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-left: -10px;
+    }
+
+    #contato {
+        background-attachment: fixed;
+    }
+
+
+}
+
+
+
+/* Fim - Notebook / PC */
+
+/* FullHD / 4K */
+@media (min-width: 1400px) {
+
+    /* Layout */
+    .container {
+        max-width: 1140px;
+    }
+
+    /* Principal */
+
+    main h1 {
+        font-size: 5rem;
+    }
+
+    main h2 {
+        font-size: 4rem;
+    }
+
+    /* Sobre */
+
+    #sobre h2 {
+        font-size: 2.7rem;
+    }
+
+    #sobre p {
+        font-size: 1.5rem;
+    }
+
+    #youtube iframe {
+        width: 560px;
+        height: 315px;
+        margin-left: 20px;
+    }
+
+    /* Cartões */
+    .card {
+        margin-right: 0px;
+    }
+
+}
+
+/* Fim - FullHD / 4K */
