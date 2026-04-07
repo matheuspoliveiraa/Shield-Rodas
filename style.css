@@ -3,7 +3,7 @@
 /* Variáveis */
 
 :root {
-    --rosa: #c2588c;
+    --rosa: #c2588c; 
     --preto: #000000;
     --branco: #ffffff;
     --rosaescuro: #af0848;
@@ -20,8 +20,12 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Lobster", sans-serif;
+body h1 {
+    font-family: "Poppins", sans-serif;
+}
+
+body p {
+    font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -180,7 +184,6 @@ main .container {
 
 main h1 {
     color: var(--rosaescuro);
-    font-family: "Oleo Script", system-ui;
     text-shadow:
         -1px -1px 0 #fff,
         1px -1px 0 #fff,
@@ -193,7 +196,7 @@ main h1 {
 main h2 {
     color: var(--rosaclarinho);
     text-shadow: 0px 5px 10px var(--rosaescuro), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
-    font-family: "Lobster", sans-serif;
+
     margin-bottom: 35px;
 }
 
@@ -333,7 +336,6 @@ main h2 {
     background: url(./img/bannerfundo.jpg);
     background-position: center;
     background-size: cover;
-    font-family: "Lato", sans-serif;
     font-weight: 900;
 }
 
@@ -783,7 +785,7 @@ main h2 {
     /* Principal */
 
     main h1 {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     main h2 {
