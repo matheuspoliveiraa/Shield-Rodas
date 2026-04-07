@@ -1,0 +1,602 @@
+/* Layout */
+
+/* Variáveis */
+
+:root {
+    --branco: #ffffff;
+    --preto: #000000;
+    --cinza-escuro: #2f2f2f;
+    --cinza-claro: #d3d3d3;
+    --Cinza-medio: #808080;
+}
+
+/* CSS - reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body h1,
+h2 {
+    font-family: "Poppins", sans-serif;
+}
+
+body p {
+    font-family: "Inter", sans-serif;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: var(--preto);
+    padding: 10px 40px;
+    color: var(--branco);
+    border-radius: 30px;
+    border: 2px solid var(--cinza-claro);
+}
+
+/* Cartão */
+.card {
+    width: 310px;
+    height: 450px;
+    background-color: var(--cinza-escuro);
+    margin-bottom: 25px;
+    border: 2px solid var(--preto);
+    text-align: center;
+    border-radius: 30px;
+    margin: 0px 20px 0px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* empurra o botão pra baixo */
+    overflow: hidden;
+}
+
+.card img {
+    border-radius: 30px 30px 0px 0px;
+    height: 300px;
+    /* Coordenadas (encima, encima, embaixo, embaixo */
+}
+
+.card h2 {
+    font-size: 1.7rem;
+    margin: 15px 0px;
+    color: var(--cinza-claro);
+}
+
+.card p {
+    color: var(--branco);
+    padding: 0px 15px 40px 30px;
+}
+
+#carros #titulo {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: var(--cinza-claro);
+    text-align: center;
+}
+
+#titulo h2 {
+    font-size: 3.0rem;
+}
+
+#titulo p {
+    color: var(--branco);
+    font-size: 1.3rem;
+}
+
+#carros {
+    background: url(./img/backgound2.jpg);
+    background-size: cover;
+}
+
+
+
+/* Topo do site */
+
+#topo {
+    position: fixed;
+    right: 15px;
+    bottom: 10px;
+}
+
+#topo img {
+    height: 40px;
+    width: 40px;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+    /* Deixar os botões deslizando mais suavemente */
+}
+
+/* Fim do Layout*/
+
+/* Notebook */
+
+/* Cabeçalho */
+
+header {
+    height: 70px;
+    background-color: var(--cinza-escuro);
+}
+
+#logo img {
+    width: 180px;
+    height: 130px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+
+    
+
+#check {
+    display: none;
+}
+
+label {
+    color: rgba(211, 211, 211, 0.75);
+    font-size: 2.5rem;
+    font-weight: 900;
+    position: fixed;
+    right: 15px;
+    top: 5px;
+}
+
+nav ul {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 70px;
+    right: -65%;
+    width: 65%;
+    transition: all 0.5s;
+}
+
+
+
+/* Ação para caixa check box */
+
+#check:checked~ul {
+    right: 0px;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--preto);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--branco);
+}
+
+/* Principal */
+
+main {
+    height: 60vh;
+    background-size: cover;
+    position: relative;
+}
+
+main video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+main .container {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+main h1 {
+    color: var(--preto);
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+    margin-bottom: 10px;
+    font-size: 3.8rem;
+}
+
+main h2 {
+    color: var(--branco);
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    margin-bottom: 35px;
+}
+
+/* Destaque */
+#destaque {
+    padding: 50px 13px;
+    background: url(./img/backgound.jpg);
+}
+
+#destaque .container {
+    flex-direction: row;
+    justify-content: center;
+}
+
+#hero {
+    text-align: center;
+}
+
+#hero img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 40px;
+    border: 2px solid #fff;
+}
+
+#hero-text h2 {
+    margin-bottom: 15px;
+    color: var(--branco);
+    font-size: 3.7rem;
+}
+
+#hero-text p {
+    color: var(--branco);
+    font-size: 1.4rem;
+}
+
+#hero-text #text {
+    margin-bottom: 50px;
+}
+
+.topics {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.topics p {
+    margin-left: 15px;
+    color: var(--branco);
+}
+
+/* Sobre */
+
+#sobre {
+    padding: 60px 40px;
+    background: url(./img/backgound2.jpg);
+    background-size: cover;
+}
+
+#sobre .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+#sobre iframe {
+    width: 340px;
+    height: 191px;
+
+}
+
+#sobre p {
+    color: var(--branco);
+    font-size: 1.1rem;
+}
+
+#sobre h2 {
+    color: var(--cinza-claro);
+    margin-bottom: 20px;
+    font-size: 3.0rem;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+/* PDF */
+
+#pdf {
+    background: url(./img/backgound.jpg);
+    padding: 70px 0px 70px 0px;
+}
+
+#pdf .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#pdf h2 {
+    color: var(--cinza-claro);
+    margin-bottom: 15px;
+    font-size: 2.7rem;
+    text-align: center;
+}
+
+#pdf p {
+    margin-bottom: 50px;
+    color: var(--branco);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#pdf .btn {
+    font-size: 1.3rem;
+    display: table;
+    margin: 0 auto;
+}
+
+/* Cartões */
+
+#carros {
+    background-color: var(--branco);
+    padding: 50px 0px 25px 0px;
+}
+
+#carros .container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
+}
+
+#carros .btn {
+  font-size: 1.3rem;
+    display: table;
+    margin: 40px auto;
+}
+
+ /*Contatos */
+
+    #bloco1,
+    #bloco2,
+    #bloco3 {
+        margin: 15px 50px;
+    }
+
+    #contato iframe {
+        display: flex;
+        border-radius: 35px;
+    }
+
+    #contato .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #linkloc {
+        display: none;
+    }
+
+    #iconloc {
+        display: flex;
+    }
+
+    #aviso {
+        display: none;
+    }
+
+    #aviso2 {
+        margin-top: 40px;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-left: -10px;
+    }
+
+    #contato {
+    background: url(./img/backgound.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 50px;
+    }
+
+    #contato p {
+        color: var(--branco);
+    }
+
+    #contato img {
+        margin: 10px 0px;
+    }
+
+    /* Rodapé */
+
+#icons .container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#icons {
+    text-align: center;
+    background-color: var(--cinza-escuro);
+}
+
+#icons p {
+    color: var(--cinza-claro);
+    font-size: 1.2rem;
+}
+
+#icons img {
+    height: 40px;
+    width: 40px;
+    margin: 20px 3px;
+}
+
+#topo img{
+    height: 60px;
+    width: 60px;
+}
+
+
+/* Celular */
+
+@media (max-width: 768px) {
+
+    
+
+    .container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    /* HEADER */
+    #logo img {
+        width: 120px;
+        height: 100px;
+
+    }
+
+    /* MENU */
+    nav ul {
+        width: 65%;
+        right: -65%;
+    }
+
+    /* HERO */
+    main h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    main h2 {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    
+
+    /* DESTAQUE */
+    #destaque .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #hero img {
+        width: 220px;
+        height: 220px;
+    }
+
+    #hero-text h2 {
+        font-size: 2rem;
+    }
+
+    /* SOBRE */
+    #sobre .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #sobre video {
+        width: 100%;
+        height: auto;
+    }
+
+    /* CARDS */
+    #carros .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    #titulo h2 {
+        font-size: 1.3rem;
+    }
+
+    #titulo p {
+        font-size: 1.0rem;
+    }
+
+    /* CONTATO */
+    #contato .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #contato iframe {
+        display: none;
+    }
+
+    #bloco2 a {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    #iconloc {
+        display: none;
+    }
+
+    /* FOOTER */
+    #icons .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    /* Layout */
+    .container {
+        max-width: 1140px;
+    }
+
+    /* Principal */
+
+    main h1 {
+        font-size: 3rem;
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Sobre */
+
+    #sobre h2 {
+        font-size: 2.7rem;
+    }
+
+    #sobre p {
+        font-size: 1.5rem;
+    }
+
+    #youtube iframe {
+        width: 560px;
+        height: 315px;
+        margin-left: 20px;
+    }
+
+    /* Cartões */
+    .card {
+        margin-right: 0px;
+    }
+
+}
