@@ -19,3 +19,4 @@ window.addEventListener('scroll', function (){
     // Se a caixa input check estiver marcada, desmarcar
     menuCheck.checked = false
 })
+
