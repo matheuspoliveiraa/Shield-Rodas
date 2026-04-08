@@ -3,13 +3,16 @@
 /* Variáveis */
 
 :root {
-    --rosa: #c2588c; 
+    --cinzamedio: #4A4A4A;
+    /* Cinza Medio */
     --preto: #000000;
+    /* Preto */
     --branco: #ffffff;
-    --rosaescuro: #af0848;
-    --dourado: #c2a362;
-    --rosaqueimado: #b27c71;
-    --rosaclarinho: #ffdade;
+    /* Branco */
+    --cinzaescuro: #2F2F2F;
+    /* Cinza escuro */
+    --cinzaclaro: #9E9E9E;
+    /* Cinza Claro */
 }
 
 /* CSS - reset */
@@ -20,7 +23,7 @@
     box-sizing: border-box;
 }
 
-body h1 {
+body h1, h2 {
     font-family: "Poppins", sans-serif;
 }
 
@@ -35,22 +38,22 @@ body p {
 
 .btn {
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     font-weight: 600;
-    background-color: var(--rosaescuro);
+    background-color: var(--preto);
     padding: 10px 40px;
     color: var(--branco);
     border-radius: 30px;
-    border: 2px solid var(--rosa);
+    border: 2px solid var(--branco);
 }
 
 /* Cartão */
 .card {
     width: 342px;
     height: 480px;
-    background-color: var(--rosa);
+    background-color: var(--cinzamedio);
     margin-bottom: 25px;
-    border: 2px solid var(--rosaescuro);
+    border: 2px solid var(--cinzaescuro);
     text-align: center;
     border-radius: 30px;
 }
@@ -96,8 +99,8 @@ body p {
 }
 
 #topo img {
-    height: 40px;
-    width: 40px;
+    height: 55px;
+    width: 55px;
 }
 
 /* Scroll suave */
@@ -114,12 +117,12 @@ html {
 /* Cabeçalho */
 header {
     height: 70px;
-    background-color: var(--rosaclarinho);
+    background-color: var(--cinzaclaro);
 }
 
 #logo img {
-    width: 128px;
-    height: 120px;
+    width: 150px;
+    height: 110px;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -129,7 +132,7 @@ header {
 }
 
 label {
-    color: rgba(224, 8, 170, 0.75);
+    color: rgba(0, 0, 0, 0.75);
     font-size: 2.5rem;
     font-weight: 900;
     position: fixed;
@@ -139,7 +142,7 @@ label {
 
 nav ul {
     height: 100vh;
-    background-color: rgba(250, 130, 250, 0.8);
+    background-color: rgba(74, 74, 74, 0.75);
     position: fixed;
     top: 70px;
     right: -65%;
@@ -157,19 +160,19 @@ nav ul li {
     list-style: none;
     padding: 20px;
     text-align: center;
-    border-bottom: 1px solid var(--rosaclarinho);
+    border-bottom: 1px solid var(--branco);
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--rosaescuro);
+    color: var(--branco);
 }
 
 /* Principal */
 
 main {
     height: 60vh;
-    background: url(./img/banner.jpg);
+    background: url(./img/backgoundPrincipal.png);
     background-size: cover;
 
 
@@ -183,21 +186,30 @@ main .container {
 }
 
 main h1 {
-    color: var(--rosaescuro);
+    color: var(--preto);
     text-shadow:
-        -1px -1px 0 #fff,
-        1px -1px 0 #fff,
-        -1px 1px 0 #fff,
-        1px 1px 0 #fff;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
+        -1px -1px 0 rgba(255, 255, 255, 0.4),
+        1px -1px 0 rgba(255, 255, 255, 0.4),
+        -1px 1px 0 rgba(255, 255, 255, 0.4),
+        1px 1px 0 rgba(255, 255, 255, 0.4);
+    margin-bottom: 20px;
+    font-size: 1.0rem;
 }
 
 main h2 {
-    color: var(--rosaclarinho);
-    text-shadow: 0px 5px 10px var(--rosaescuro), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
-
+    color: var(--branco);
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
     margin-bottom: 35px;
+    font-size: 0.7rem;
+}
+
+main .btn {
+    margin-top: 20px;
+
 }
 
 /* Destaque */
@@ -225,9 +237,9 @@ main h2 {
 
 #hero-text h2 {
     margin-bottom: 15px;
-    color: var(--rosaescuro);
+    color: var(--cinzaescuro);
     font-size: 2.7rem;
-    text-shadow: 0px 5px 10px var(--rosa), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 5px 10px var(--cinzamedio), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 #hero-text p {
@@ -242,7 +254,7 @@ main h2 {
 
 .topics p {
     margin-left: 15px;
-    color: var(--rosaescuro);
+    color: var(--cinzaescuro);
     text-shadow: 0px 5px 10px var(--branco), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -250,7 +262,7 @@ main h2 {
 
 #sobre {
     padding: 40px 13px;
-    background-color: var(--rosaclarinho);
+    background-color: var(--cinzaclaro);
 }
 
 #sobre .container {
@@ -268,11 +280,11 @@ main h2 {
 }
 
 #sobre p {
-    color: var(--rosa);
+    color: var(--cinzamedio);
 }
 
 #sobre h2 {
-    color: var(--dourado);
+    color: var(--preto);
     margin-bottom: 20px;
 }
 
@@ -295,7 +307,7 @@ main h2 {
 }
 
 #pdf h2 {
-    color: var(--rosaescuro);
+    color: var(--cinzaescuro);
     margin-bottom: 15px;
     font-size: 1.7rem;
 }
@@ -313,7 +325,7 @@ main h2 {
 /* Cartões */
 
 #receitas {
-    background-color: var(--rosaclarinho);
+    background-color: var(--cinzaclaro);
     padding: 50px 0px 25px 0px;
 }
 
@@ -380,11 +392,11 @@ main h2 {
 
 #icons {
     text-align: center;
-    background-color: var(--rosaclarinho);
+    background-color: var(--cinzaclaro);
 }
 
 #icons p {
-    color: var(--rosaescuro);
+    color: var(--cinzaescuro);
     margin-bottom: 30px;
     font-size: 1.2rem;
 }
@@ -422,11 +434,12 @@ main h2 {
     }
 
     main h1 {
-        font-size: 2.1rem;
+        font-size: 1.5rem;
+        margin-top: 30px;
     }
 
     main h2 {
-        font-size: 1.9rem;
+        font-size: 1.3rem;
     }
 
     /* Destaque */
@@ -482,6 +495,12 @@ main h2 {
         max-width: 720px;
     }
 
+    /* Topo */
+    #topo img {
+        width: 80px;
+        height: 80px;
+    }
+
     /* Cabeçalho */
     nav ul {
         width: 40%;
@@ -490,11 +509,11 @@ main h2 {
 
     /* Principal */
     main h1 {
-        font-size: 3.1rem;
+        font-size: 2.1rem;
     }
 
     main h2 {
-        font-size: 2.9rem;
+        font-size: 1.5rem;
     }
 
     /* Sobre */
@@ -587,8 +606,8 @@ main h2 {
     }
 
     #logo img {
-        width: 194px;
-        height: 194px;
+        width: 210px;
+        height: 150px;
     }
 
     label {
@@ -610,12 +629,18 @@ main h2 {
     }
 
     ul li a {
-        font-size: 1.5rem;
-        font-weight: 400;
+        font-size: 1.3rem;
+        font-weight: 450;
+        text-shadow:
+            -1px -1px 0 rgba(255, 255, 255, 0.10),
+            1px -1px 0 rgba(255, 255, 255, 0.10),
+            -1px 1px 0 rgba(255, 255, 255, 0.10),
+            1px 1px 0 rgba(46, 45, 56, 0.966);
+
     }
 
     nav ul li a:hover {
-        color: var(--dourado)
+        color: var(--preto)
     }
 
     /* Principal */
@@ -625,11 +650,11 @@ main h2 {
     }
 
     main h1 {
-        font-size: 4.5rem;
+        font-size: 3.4rem;
     }
 
     main h2 {
-        font-size: 4rem;
+        font-size: 2.6rem;
     }
 
     .btn {
@@ -785,11 +810,11 @@ main h2 {
     /* Principal */
 
     main h1 {
-        font-size: 4rem;
+        font-size: 3.3rem;
     }
 
     main h2 {
-        font-size: 4rem;
+        font-size: 2.5em;
     }
 
     /* Sobre */
