@@ -23,7 +23,8 @@
     box-sizing: border-box;
 }
 
-body h1, h2 {
+body h1,
+h2 {
     font-family: "Poppins", sans-serif;
 }
 
@@ -166,6 +167,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: var(--branco);
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Principal */
@@ -205,6 +207,7 @@ main h2 {
         1px 1px 0 #000;
     margin-bottom: 35px;
     font-size: 0.7rem;
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 main .btn {
@@ -215,7 +218,7 @@ main .btn {
 /* Destaque */
 #destaque {
     padding: 50px 13px;
-    background: url(./img/bannerfundo.jpg);
+    background: url(./img/backgound.jpg);
     background-size: cover;
     background-position: -80px;
 }
@@ -233,36 +236,38 @@ main .btn {
     height: 300px;
     border-radius: 50%;
     margin-bottom: 50px;
+    border: 2px solid #fff;
 }
 
 #hero-text h2 {
     margin-bottom: 15px;
-    color: var(--cinzaescuro);
+    color: var(--branco);
     font-size: 2.7rem;
-    text-shadow: 0px 5px 10px var(--cinzamedio), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 #hero-text p {
-    color: var(--preto);
+    color: var(--branco);
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 .topics {
     display: flex;
     align-items: center;
     margin-top: 15px;
+
 }
 
 .topics p {
     margin-left: 15px;
-    color: var(--cinzaescuro);
-    text-shadow: 0px 5px 10px var(--branco), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Sobre */
 
 #sobre {
     padding: 40px 13px;
-    background-color: var(--cinzaclaro);
+    background: url(./img/backgound2.jpg);
+    background-size: cover;
 }
 
 #sobre .container {
@@ -277,22 +282,21 @@ main .btn {
 
 #sobre p {
     margin-bottom: 25px;
-}
-
-#sobre p {
-    color: var(--cinzamedio);
+    color: var(--branco);
 }
 
 #sobre h2 {
-    color: var(--preto);
+    color: var(--branco);
     margin-bottom: 20px;
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    font-size: 2.0rem;
 }
 
 /* PDF/Cardápio */
 
 #pdf {
     padding: 40px 13px;
-    background: url(./img/bannerfundo.jpg);
+    background: url(./img/backgound.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -307,15 +311,15 @@ main .btn {
 }
 
 #pdf h2 {
-    color: var(--cinzaescuro);
+    color: var(--branco);
     margin-bottom: 15px;
-    font-size: 1.7rem;
+    font-size: 2.0rem;
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 #pdf p {
     margin-bottom: 50px;
-    color: var(--preto);
-    font-size: 1.2rem;
+    color: var(--branco);
 }
 
 #pdf .btn {
@@ -553,6 +557,10 @@ main .btn {
     #aviso {
         font-size: 1.2rem;
     }
+
+    #sobre h2 {
+        font-size: 2.3rem;
+    }
 }
 
 /* Fim - Tablet portrait */
@@ -630,12 +638,7 @@ main .btn {
 
     ul li a {
         font-size: 1.3rem;
-        font-weight: 450;
-        text-shadow:
-            -1px -1px 0 rgba(255, 255, 255, 0.10),
-            1px -1px 0 rgba(255, 255, 255, 0.10),
-            -1px 1px 0 rgba(255, 255, 255, 0.10),
-            1px 1px 0 rgba(46, 45, 56, 0.966);
+        font-weight: bold;
 
     }
 
@@ -726,14 +729,6 @@ main .btn {
 
     }
 
-    #pdf #text h2 {
-        font-size: 2.7rem;
-    }
-
-    #pdf #text p {
-        font-size: 1.3rem;
-    }
-
     /* Cartões */
     #receitas .container {
         flex-direction: row;
@@ -819,18 +814,28 @@ main .btn {
 
     /* Sobre */
 
-    #sobre h2 {
-        font-size: 2.7rem;
+     #sobre h2 {
+        font-size: 2.3rem;
     }
 
     #sobre p {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     #youtube iframe {
         width: 560px;
         height: 315px;
         margin-left: 20px;
+    }
+
+    /* PDF */
+
+    #pdf #text h2 {
+        font-size: 2.3rem;
+    }
+
+     #pdf #text p {
+        font-size: 1.3rem;
     }
 
     /* Cartões */
