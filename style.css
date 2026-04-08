@@ -52,9 +52,9 @@ body p {
 .card {
     width: 342px;
     height: 480px;
-    background-color: var(--cinzamedio);
-    margin-bottom: 25px;
-    border: 2px solid var(--cinzaescuro);
+    background-color: var(--preto);
+    margin-bottom: 50px;
+    border: 2px solid var(--branco);
     text-align: center;
     border-radius: 30px;
 }
@@ -65,9 +65,9 @@ body p {
 }
 
 .card h2 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     margin: 15px 0px;
-    color: purple;
+    color: var(--cinzaclaro);
 }
 
 .card p {
@@ -77,18 +77,20 @@ body p {
 
 #receitas #titulo {
     margin-bottom: 30px;
-    font-size: 1.5rem;
-    color: purple;
-    text-shadow:
-        -0.8px -0.8px 0 #fff,
-        0.8px -0.8px 0 #fff,
-        -0.8px 0.8px 0 #fff,
-        0.8px 0.8px 0 #fff;
+    color: var(--branco);
     text-align: center;
 }
 
+#receitas #titulo h2 {
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+
 #receitas .btn {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+    
 }
 
 /* Topo do site */
@@ -118,7 +120,7 @@ html {
 /* Cabeçalho */
 header {
     height: 70px;
-    background-color: var(--cinzaclaro);
+    background-color: var(--cinzaescuro);
 }
 
 #logo img {
@@ -329,7 +331,8 @@ main .btn {
 /* Cartões */
 
 #receitas {
-    background-color: var(--cinzaclaro);
+    background: url(./img/backgound2.jpg);
+    background-size: cover;
     padding: 50px 0px 25px 0px;
 }
 
@@ -349,10 +352,9 @@ main .btn {
 }
 
 #contato {
-    background: url(./img/bannerfundo.jpg);
+    background: url(./img/backgound.jpg);
     background-position: center;
     background-size: cover;
-    font-weight: 900;
 }
 
 #bloco2 {
@@ -381,11 +383,10 @@ main .btn {
     margin: 7px 0px;
 }
 
-#aviso {
-    margin-top: 40px;
-    font-size: 1.3rem;
-    text-align: center;
-    margin-left: -10px;
+#contato p {
+    font-weight: bold;
+    color: var(--branco);
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Rodapé */
@@ -396,19 +397,21 @@ main .btn {
 
 #icons {
     text-align: center;
-    background-color: var(--cinzaclaro);
+    background-color: var(--cinzaescuro);
 }
 
 #icons p {
-    color: var(--cinzaescuro);
+    color: var(--branco);
     margin-bottom: 30px;
     font-size: 1.2rem;
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
 #icons img {
     height: 40px;
     width: 40px;
     margin: 20px 3px;
+    border-radius: 20px;
 }
 
 
@@ -526,6 +529,10 @@ main .btn {
         margin-left: 30px;
     }
 
+     #sobre h2 {
+        font-size: 2.3rem;
+    }
+
     #youtube iframe {
         width: 560px;
         height: 315px;
@@ -536,15 +543,13 @@ main .btn {
     #contato iframe {
         display: flex;
         margin: 20px;
+        border-radius: 50px;
     }
 
     #contato .container {
-        flex-direction: row-reverse;
+        flex-direction: row;
     }
 
-    #aviso2 {
-        display: none;
-    }
 
     #iconloc {
         display: flex;
@@ -554,13 +559,14 @@ main .btn {
         display: none;
     }
 
-    #aviso {
-        font-size: 1.2rem;
+    #contato p {
+        font-size: 0.8rem;
     }
 
-    #sobre h2 {
-        font-size: 2.3rem;
+    #bloco2, #bloco3 {
+        margin-top: 80px;
     }
+   
 }
 
 /* Fim - Tablet portrait */
@@ -590,10 +596,16 @@ main .btn {
         margin-right: 25px;
     }
 
-    /* Contatos */
-    #aviso {
-        font-size: 1.5rem;
+    /* Contato */
+
+    #contato iframe {
+        margin-right: 70px;
     }
+
+    #bloco2, #bloco3 {
+        margin-top: 80px;
+    }
+    
 
 }
 
@@ -610,7 +622,7 @@ main .btn {
 
     /* Cabeçalho */
     header {
-        height: 100px;
+        height: 90px;
     }
 
     #logo img {
@@ -738,6 +750,10 @@ main .btn {
         margin-right: 0px;
     }
 
+    #receitas #titulo h2 {
+        font-size: 2.7rem;
+    }
+
     /* Botão topo */
 
     #topo img {
@@ -772,17 +788,6 @@ main .btn {
         display: flex;
     }
 
-    #aviso {
-        display: none;
-    }
-
-    #aviso2 {
-        margin-top: 40px;
-        font-size: 1.2rem;
-        text-align: center;
-        margin-left: -10px;
-    }
-
     #contato {
         background-attachment: fixed;
     }
@@ -814,7 +819,7 @@ main .btn {
 
     /* Sobre */
 
-     #sobre h2 {
+    #sobre h2 {
         font-size: 2.3rem;
     }
 
@@ -834,7 +839,7 @@ main .btn {
         font-size: 2.3rem;
     }
 
-     #pdf #text p {
+    #pdf #text p {
         font-size: 1.3rem;
     }
 
