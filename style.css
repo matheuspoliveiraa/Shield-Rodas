@@ -24,7 +24,7 @@
 }
 
 body h1,
-h2 {
+h2, h3, h4, h5 {
     font-family: "Poppins", sans-serif;
 }
 
@@ -112,6 +112,13 @@ html {
     scroll-behavior: smooth;
     /* Deixar os botões deslizando mais suavemente */
 }
+
+/* DIVIDER */
+.divider {
+      height: 1px;
+      background: var(--branco);
+      margin: 0 6%;
+  }
 
 /* Fim do Layout*/
 
@@ -498,6 +505,195 @@ main .btn {
     color: var(--cinzaclaro);
 }
 
+/* Missão, visão e valores */
+
+#missao {
+    background: url(./img/backgound2.jpg);
+    padding: 60px 20px;
+    background-size: cover;
+}
+
+#missao .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.missaocard {
+    background: var(--preto);
+    border: 1px solid var(--cinzaclaro);
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.missaocard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(120deg, transparent, var(--branco), transparent);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.missaocard:hover::before {
+    opacity: 0.2;
+}
+
+.missaocard:hover {
+    transform: translateY(-8px);
+    border-color: var(--branco);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+}
+
+
+.missaocard img {
+    width: 50px;
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1);
+}
+
+
+.missaocard h2 {
+    color: var(--cinzaclaro);
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+
+.missaocard p {
+    color: var(--branco);
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+
+
+/* Sobre a SHIELD */
+
+#sobreshield {
+    background: url(./img/background3.png);
+   background-size: cover;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#sobreshield .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* TÍTULOS */
+#sobreshield h2 {
+    color: var(--branco);
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= SOBRE ================= */
+.sobre-box {
+    margin-bottom: 60px;
+    background-color: var(--preto);
+    padding: 40px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--cinzaclaro);
+}
+
+.sobre-box p {
+    color: var(--branco);
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ================= HISTÓRIA ================= */
+.historia-box {
+    margin-bottom: 60px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timeline-item {
+    background: var(--preto);
+    border-left: 3px solid var(--cinzaclaro); /* detalhe lateral */
+    border-radius: 6px;
+    padding: 15px 15px 15px 20px;
+    transition: 0.3s;
+    text-align: left; /* melhor leitura */
+}
+
+.timeline-item:hover {
+    border-color: var(--branco);
+    transform: translateY(-3px);
+}
+
+.timeline-item span {
+    color: var(--cinzaclaro);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.timeline-item p {
+     color: var(--branco);
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+
+/* ================= VALORES ================= */
+.valores-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.valor-item {
+    background: var(--preto);
+    border: 1px solid var(--cinzamedio);
+    border-radius: 10px;
+    padding: 25px 20px;
+    transition: 0.3s;
+    border-left: 3px solid var(--cinzaclaro);
+}
+
+.valor-item:hover {
+    border-color: var(--cinzaclaro);
+    transform: translateY(-5px);
+}
+
+.valor-item img {
+    width: 40px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1);
+}
+
+.valor-item h3 {
+    color: var(--cinzaclaro);
+    font-size: 18px;
+    margin-bottom: 8px;
+    
+}
+
+.valor-item p {
+    color: var(--branco);
+    font-size: 16px;
+}
 
 
 
@@ -570,6 +766,13 @@ main .btn {
         margin: 10px 20px;
     }
 
+    /* Página Sobre*/
+
+    /* Missão */
+
+    #missao .container {
+        grid-template-columns: 1fr;
+    }
 
 
 }
@@ -661,6 +864,10 @@ main .btn {
         flex-direction: row-reverse;
     }
 
+     #missao .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
 
 /* Fim - Tablet portrait */
@@ -708,6 +915,10 @@ main .btn {
     .sobre #destaque .container {
         display: flex;
         flex-direction: row-reverse;
+    }
+
+    #missao .container {
+        grid-template-columns: repeat(3, 1fr);
     }
 
 }
@@ -905,6 +1116,10 @@ main .btn {
         flex-direction: row-reverse;
     }
 
+    #missao .container {
+        gap: 30px;
+    }
+
 }
 
 
@@ -967,6 +1182,10 @@ main .btn {
     .sobre #destaque .container {
         display: flex;
         flex-direction: row-reverse;
+    }
+
+    #missao .container {
+        max-width: 1300px;
     }
 }
 
