@@ -24,7 +24,10 @@
 }
 
 body h1,
-h2, h3, h4, h5 {
+h2,
+h3,
+h4,
+h5 {
     font-family: "Poppins", sans-serif;
 }
 
@@ -66,14 +69,16 @@ a {
 }
 
 .card h2 {
-    font-size: 1.8rem;
-    margin: 15px 0px;
+    font-size: 1.7rem;
+    margin: 15px auto;
     color: var(--cinzaclaro);
 }
 
 .card p {
     color: var(--branco);
-    padding: 0px 15px 40px 30px;
+    padding: 0 20px 25px;
+    text-align: center;
+    line-height: 1.5;
 }
 
 #receitas #titulo {
@@ -86,6 +91,7 @@ a {
     text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     font-size: 1.7rem;
+
 }
 
 #receitas .btn {
@@ -115,10 +121,10 @@ html {
 
 /* DIVIDER */
 .divider {
-      height: 1px;
-      background: var(--branco);
-      margin: 0 6%;
-  }
+    height: 1px;
+    background: var(--branco);
+    margin: 0 6%;
+}
 
 /* Fim do Layout*/
 
@@ -132,7 +138,7 @@ header {
 }
 
 #logo img {
-    width: 150px;
+    width: 160px;
     height: 110px;
     margin-top: 10px;
     margin-left: 10px;
@@ -143,7 +149,7 @@ header {
 }
 
 label {
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(253, 253, 253, 0.75);
     font-size: 2.5rem;
     font-weight: 900;
     position: fixed;
@@ -180,6 +186,10 @@ nav ul li a {
     color: var(--branco);
     text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
     font-size: 1.0rem;
+}
+
+nav ul li a.ativo {
+    color: var(--cinzaclaro);
 }
 
 /* Principal */
@@ -310,12 +320,14 @@ main .btn {
 #hero-text p {
     color: var(--branco);
     text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    text-align: justify;
 }
 
 .topics {
     display: flex;
     align-items: center;
     margin-top: 15px;
+    justify-content: center;
 
 }
 
@@ -344,6 +356,7 @@ main .btn {
 #sobre p {
     margin-bottom: 25px;
     color: var(--branco);
+    text-align: justify;
 }
 
 #sobre h2 {
@@ -381,10 +394,14 @@ main .btn {
 #pdf p {
     margin-bottom: 50px;
     color: var(--branco);
+    text-align: justify;
 }
 
 #pdf .btn {
     font-size: 1.3rem;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 /* Cartões */
@@ -408,6 +425,9 @@ main .btn {
 
 #contato .container {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+
 }
 
 #contato {
@@ -429,7 +449,6 @@ main .btn {
 }
 
 #contato img {
-    align-items: center;
     width: 35px;
     height: 35px;
 }
@@ -477,7 +496,8 @@ main .btn {
 
 /* Cabeçalho */
 .sobre nav {
-    display: none;
+    display: flex;
+    z-index: 3;
 }
 
 /* Destaque */
@@ -541,7 +561,7 @@ main .btn {
     padding: 1px;
     background: linear-gradient(120deg, transparent, var(--branco), transparent);
     -webkit-mask-composite: xor;
-            mask-composite: exclude;
+    mask-composite: exclude;
     opacity: 0;
     transition: 0.3s;
 }
@@ -582,7 +602,7 @@ main .btn {
 
 #sobreshield {
     background: url(./img/background3.png);
-   background-size: cover;
+    background-size: cover;
     padding: 80px 20px;
     text-align: center;
 }
@@ -631,11 +651,13 @@ main .btn {
 
 .timeline-item {
     background: var(--preto);
-    border-left: 3px solid var(--cinzaclaro); /* detalhe lateral */
+    border-left: 3px solid var(--cinzaclaro);
+    /* detalhe lateral */
     border-radius: 6px;
     padding: 15px 15px 15px 20px;
     transition: 0.3s;
-    text-align: left; /* melhor leitura */
+    text-align: left;
+    /* melhor leitura */
 }
 
 .timeline-item:hover {
@@ -650,7 +672,7 @@ main .btn {
 }
 
 .timeline-item p {
-     color: var(--branco);
+    color: var(--branco);
     font-size: 16px;
     margin-top: 3px;
 }
@@ -687,7 +709,7 @@ main .btn {
     color: var(--cinzaclaro);
     font-size: 18px;
     margin-bottom: 8px;
-    
+
 }
 
 .valor-item p {
@@ -695,6 +717,24 @@ main .btn {
     font-size: 16px;
 }
 
+
+#produto video {
+    width: 300px;
+    border-radius: 12px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background-color: var(--preto);
+}
+
+#produto {
+    background-color: var(--cinzamedio);
+}
+
+#produto .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 /* Fim smartphone portrait*/
@@ -852,7 +892,10 @@ main .btn {
 
     #bloco2,
     #bloco3 {
-        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     /* Página Sobre */
@@ -864,11 +907,18 @@ main .btn {
         flex-direction: row-reverse;
     }
 
-     #missao .container {
+    #missao .container {
         grid-template-columns: 1fr 1fr;
     }
 
+
 }
+
+
+
+
+
+
 
 /* Fim - Tablet portrait */
 
@@ -969,7 +1019,7 @@ main .btn {
     }
 
     nav ul li a:hover {
-        color: var(--preto)
+        color: var(--cinzaclaro)
     }
 
     /* Principal */
@@ -1009,6 +1059,7 @@ main .btn {
 
     .topics {
         display: flex;
+        justify-content: left;
     }
 
     #hero-text p {
@@ -1055,6 +1106,11 @@ main .btn {
 
     }
 
+    #pdf .btn {
+        display: inline-block;
+        margin: 0;
+    }
+
     /* Cartões */
     #receitas .container {
         flex-direction: row;
@@ -1081,6 +1137,10 @@ main .btn {
     #bloco2,
     #bloco3 {
         margin: 15px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     #contato iframe {
@@ -1104,6 +1164,12 @@ main .btn {
 
     #contato {
         background-attachment: fixed;
+    }
+
+    #bloco2 p,
+    #bloco3 p {
+        margin: 0;
+        line-height: 1.6;
     }
 
 

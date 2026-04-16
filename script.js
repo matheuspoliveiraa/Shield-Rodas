@@ -20,3 +20,12 @@ window.addEventListener('scroll', function (){
     menuCheck.checked = false
 })
 
+const links = document.querySelectorAll("nav ul li a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        links.forEach(item => item.classList.remove("ativo"));
+        link.classList.add("ativo");
+    });
+});
+
