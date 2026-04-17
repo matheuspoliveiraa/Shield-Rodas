@@ -159,7 +159,7 @@ label {
 
 nav ul {
     height: 100vh;
-    background-color: rgba(74, 74, 74, 0.75);
+    background-color: rgba(74, 74, 74, 0.95);
     position: fixed;
     top: 70px;
     right: -65%;
@@ -621,7 +621,7 @@ main .btn {
     text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* ================= SOBRE ================= */
+
 .sobre-box {
     margin-bottom: 60px;
     background-color: var(--preto);
@@ -638,7 +638,7 @@ main .btn {
     margin: 0 auto;
 }
 
-/* ================= HISTÓRIA ================= */
+
 .historia-box {
     margin-bottom: 60px;
 }
@@ -678,7 +678,6 @@ main .btn {
 }
 
 
-/* ================= VALORES ================= */
 .valores-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -717,25 +716,66 @@ main .btn {
     font-size: 16px;
 }
 
-
-#produto video {
-    width: 300px;
-    border-radius: 12px;
-    margin: 40px auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    background-color: var(--preto);
-}
-
-#produto {
-    background-color: var(--cinzamedio);
-}
+/* Página de produto */
 
 #produto .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
+/* TEXTO */
+
+#produto h2 {
+    margin: 25px auto;
+    font-size: 1.7rem;
+    color: var(--cinzaclaro);
+     text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+#produto p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--branco);
+}
+
+.duvida {
+    display: inline-block;
+    margin: 30px auto;
+    padding: 12px 20px;
+
+    color: var(--branco);
+    background: var(--cinzaescuro);
+
+    font-size: 13px;
+    border-radius: 20px;
+    border: 1px solid var(--cinzamedio);
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
+
+    position: relative;
+}
+
+/* VIDEO */
+
+#produto {
+    display: flex;
+    justify-content: center;
+    background-color: var(--cinzamedio);
+}
+
+#produto video {
+    width: 90%;
+    display: block;
+    margin: 0 auto; 
+    border-radius: 12px;
+    background: var(--preto);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    margin-top: 50px;
+}
 
 /* Fim smartphone portrait*/
 
