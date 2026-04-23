@@ -729,7 +729,7 @@ main .btn {
     margin: 25px auto;
     font-size: 1.7rem;
     color: var(--cinzaclaro);
-     text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -770,12 +770,143 @@ main .btn {
 #produto video {
     width: 90%;
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto;
     border-radius: 12px;
     background: var(--preto);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     margin-top: 50px;
 }
+
+/* PÁGINA CERTIFICADOS */
+
+.certificado .btn {
+    padding: 10px 20px;
+    font-size: 2.3rem;
+    border-radius: 50px;
+    background: var(--cinzaclaro);
+}
+
+.certificado .btn:hover {
+    transition: 0.3s;
+    background-color: var(--cinzaescuro);
+}
+
+.certificado .card {
+    height: 560px;
+}
+
+.certificado .card p {
+    text-align: justify;
+}
+
+.certificado #receitas {
+    background: url(./img/backgoundPrincipal.png)
+}
+
+.certificado #receitas a {
+    font-size: 1.0rem;
+    color: var(--preto);
+}
+
+.certificado #receitas a:hover {
+    transition: 0.3s;
+    color: var(--branco);
+}
+
+/* PÁGINA PERGUNTAS FREQUENTES */
+
+
+
+.faq {
+    padding: 4rem 1rem;
+    background: var(--cinzamedio);
+    min-height: 70vh;
+}
+
+.faq .container {
+    flex-direction: column;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    color: var(--branco);
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.faq-item {
+    background: var(--cinzaescuro);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.125rem);
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--branco);
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    transition: background 0.25s ease;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--cinzaclaro);
+    border-bottom: 2px solid var(--cinzaclaro);
+    transform: rotate(45deg);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(-135deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding-top: 15px;
+}
+
+.faq-answer p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--branco);
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    line-height: 1.6;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+}
+
 
 /* Fim smartphone portrait*/
 

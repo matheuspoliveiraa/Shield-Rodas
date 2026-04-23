@@ -29,3 +29,27 @@ links.forEach(link => {
     });
 });
 
+
+/** PERGUNTAS FREQUENTES */
+
+const items = document.querySelectorAll(".faq-item");
+
+    items.forEach(item => {
+        const button = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+
+        button.addEventListener("click", () => {
+            const isOpen = item.classList.contains("active");
+
+            items.forEach(i => {
+                i.classList.remove("active");
+                i.querySelector(".faq-answer").style.height = "0px";
+            });
+
+            if (!isOpen) {
+                item.classList.add("active");
+                answer.style.height = answer.scrollHeight + "px";
+            }
+        });
+    });
+
