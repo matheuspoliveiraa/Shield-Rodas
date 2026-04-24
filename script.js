@@ -53,3 +53,5 @@ const items = document.querySelectorAll(".faq-item");
         });
     });
 
+
+    

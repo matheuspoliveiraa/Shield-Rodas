@@ -27,12 +27,13 @@ body h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+span {
     font-family: "Poppins", sans-serif;
 }
 
 body p,
-a {
+a, li {
     font-family: "Inter", sans-serif;
 }
 
@@ -800,7 +801,8 @@ main .btn {
 }
 
 .certificado #receitas {
-    background: url(./img/backgoundPrincipal.png)
+    background: url(./img/backgoundPrincipal.png);
+    background-size: cover;
 }
 
 .certificado #receitas a {
@@ -906,6 +908,85 @@ main .btn {
     font-family: "Inter", sans-serif;
     margin: 0;
 }
+
+/* ABA INDEX COMPARAÇÃO */
+
+.comparacao {
+    background: url(./img/backgound.jpg);
+    background-size: cover;
+    padding: 50px 20px;
+    color: var(--branco);
+    text-align: center;
+}
+
+.comparacao h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.comparacao .subtitulo {
+    color: var(--branco);
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+}
+
+.comparacao .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards-comparacao {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box-comparacao {
+    background: var(--cinzaescuro);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    text-align: left;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.box-comparacao h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.box-comparacao ul {
+    list-style: none;
+    padding: 0;
+}
+
+.box-comparacao ul li {
+    margin-bottom: 15px;
+    color: var(--branco);
+    font-size: 0.95rem;
+}
+
+/* Diferenciação */
+.box-comparacao.sem {
+    border-color: var(--cinzaescuro);
+}
+
+.box-comparacao.com {
+    border-color: #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+/* Hover */
+.box-comparacao:hover {
+    transform: translateY(-5px);
+}
+
 
 
 /* Fim smartphone portrait*/
