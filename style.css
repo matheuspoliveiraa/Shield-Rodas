@@ -33,7 +33,12 @@ span {
 }
 
 body p,
-a, li {
+a,
+li,
+strong,
+option,
+textarea,
+form {
     font-family: "Inter", sans-serif;
 }
 
@@ -127,6 +132,24 @@ html {
     margin: 0 6%;
 }
 
+/* BOTÃO CONTATO */
+
+.btncontato {
+    text-decoration: none;
+    font-size: 1.0rem;
+    background-color: var(--cinzamedio);
+    padding: 10px 40px;
+    color: var(--branco);
+    border-radius: 15px;
+    border: 2px solid var(--branco);
+}
+
+.btncontato:hover {
+    color: var(--branco);
+    background-color: var(--preto);
+    transition: 0.3s;
+}
+
 /* Fim do Layout*/
 
 
@@ -191,6 +214,10 @@ nav ul li a {
 
 nav ul li a.ativo {
     color: var(--cinzaclaro);
+}
+
+.botao-ativo {
+    background: var(--preto);
 }
 
 /* Principal */
@@ -987,6 +1014,149 @@ main .btn {
     transform: translateY(-5px);
 }
 
+/* PÁGINA CONTATO */
+
+.secao-contato {
+    width: 100%;
+    padding: 100px 8%;
+    background: url(./img/backgoundContato.png);
+    background-size: cover;
+    color: var(--branco);
+}
+
+.contato-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.subtitulo {
+    color: var(--cinzaclaro);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.contato-info h2 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.contato-info p {
+    color: var(--branco);
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.box-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    border: 1px solid var(--cinzaescuro);
+    border-radius: 12px;
+    background: var(--preto);
+    transition: 0.3s;
+}
+
+.box-info:hover {
+    border-color: var(--cinzaclaro);
+    transform: translateY(-3px);
+}
+
+.box-info i {
+    width: 45px;
+    height: 45px;
+    background: var(--cinzaescuro);
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.box-info span {
+    display: block;
+    color: var(--cinzaclaro);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.contato-formulario {
+    background: var(--preto);
+    border: 1px solid var(--cinzamedio);
+    border-radius: 15px;
+    padding: 40px;
+}
+
+.contato-formulario h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.contato-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contato-formulario input,
+.contato-formulario select,
+.contato-formulario textarea {
+    width: 100%;
+    padding: 16px;
+    background: var(--preto);
+    border: 1px solid var(--cinzamedio);
+    border-radius: 10px;
+    color: var(--branco);
+    outline: none;
+    font-size: 15px;
+}
+
+.contato-formulario input:focus,
+.contato-formulario select:focus,
+.contato-formulario textarea:focus {
+    border-color: var(--branco);
+}
+
+.contato-formulario button {
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: var(--cinzamedio);
+    color: var(--branco);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contato-formulario button:hover {
+    background: var(--cinzaclaro);
+    color: var(--preto);
+}
+
+.contato-container {
+    grid-template-columns: 1fr;
+}
+
+.contato-formulario select {
+    width: 100%;
+    padding: 16px 45px 16px 16px;
+    outline: none;
+    font-size: 15px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+}
+
+
 
 
 /* Fim smartphone portrait*/
@@ -1063,6 +1233,19 @@ main .btn {
     /* Missão */
 
     #missao .container {
+        grid-template-columns: 1fr;
+    }
+
+    /* PÁGINA CONTATO */
+    .contato-info h2 {
+        font-size: 34px;
+    }
+
+    .contato-formulario {
+        padding: 30px;
+    }
+
+    .contato-container {
         grid-template-columns: 1fr;
     }
 
@@ -1163,13 +1346,24 @@ main .btn {
         grid-template-columns: 1fr 1fr;
     }
 
+    /* PÁGINA CONTATO */
+
+    .contato-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contato-info h2 {
+        font-size: 42px;
+    }
+
+    .contato-formulario {
+        padding: 35px;
+    }
+
+
 
 }
-
-
-
-
-
 
 
 /* Fim - Tablet portrait */
@@ -1221,6 +1415,15 @@ main .btn {
 
     #missao .container {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contato-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .contato-info h2 {
+        font-size: 46px;
     }
 
 }
@@ -1438,6 +1641,20 @@ main .btn {
         gap: 30px;
     }
 
+    /* PÁGINA CONTATO */
+
+    .secao-contato {
+        padding: 100px 8%;
+    }
+
+    .contato-info h2 {
+        font-size: 48px;
+    }
+
+    .contato-formulario {
+        padding: 40px;
+    }
+
 }
 
 
@@ -1505,6 +1722,24 @@ main .btn {
     #missao .container {
         max-width: 1300px;
     }
+
+    /* PÁGINA CONTATO */
+    .secao-contato {
+        padding: 120px 10%;
+    }
+
+    .contato-container {
+        gap: 70px;
+    }
+
+    .contato-info h2 {
+        font-size: 56px;
+    }
+
+    .contato-formulario {
+        padding: 50px;
+    }
+
 }
 
 /* Fim - FullHD / 4K */

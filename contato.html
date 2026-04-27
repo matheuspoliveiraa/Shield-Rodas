@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shield Rodas - Perguntas Frequentes</title>
+    <title>Shield Rodas - Contato</title>
     <meta name="description"
         content="roda, pneus, pneu, blindagem de pneus, blindagem, cinta, roda, carro, manutenção, kilometro">
     <meta name="keywords"
@@ -21,8 +21,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <!--CSS-->
     <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body>
@@ -41,14 +45,79 @@
                     <li><a href="./produto.html">Produto</a></li>
                     <li><a href="./certificacao.html">Certificados</a></li>
                     <li><a href="./FAQ.html">Perguntas Frequentes</a></li>
-                    <li><a href="./contato.html" class="ativo">Contato</a></li>
+                    <li><a href="./contato.html" class="btncontato botao-ativo">Contato</a></li>
+
                 </ul>
             </nav>
         </div>
     </header>
 
 
+    <section class="secao-contato">
+        <div class="contato-container">
 
+            <!-- LADO ESQUERDO -->
+            <div class="contato-info">
+                <span class="subtitulo">FALE CONOSCO</span>
+                <h2>FALE COM A SHIELD</h2>
+                <p>
+                    Entre em contato com nossa equipe e tire suas dúvidas sobre
+                    instalação, funcionamento, garantia e benefícios das cintas
+                    de blindagem Shield Rodas.
+                </p>
+
+                <div class="box-info">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <span>E-mail</span>
+                        <strong>contato@shieldtw.com.br</strong>
+                    </div>
+                </div>
+
+                <div class="box-info">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <span>WhatsApp</span>
+                        <strong>(11) 99305-0401
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="box-info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <span>Localização</span>
+                        <strong>Jaguaré - São Paulo, SP</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LADO DIREITO -->
+            <div class="contato-formulario">
+                <h3>Solicite seu orçamento</h3>
+
+                <form id="form-contato">
+                    <input type="text" name="name" placeholder="Seu nome completo" required>
+
+                    <input type="email" name="email" placeholder="Seu e-mail" required>
+
+                    <select name="title" required>
+                        <option value="">Selecione o assunto</option>
+                        <option>Instalação</option>
+                        <option>Orçamento</option>
+                        <option>Garantia</option>
+                        <option>Dúvidas sobre o produto</option>
+                        <option>Suporte</option>
+                    </select>
+
+                    <textarea name="message" rows="5" placeholder="Informe seu veículo e/ou sua dúvida..."></textarea>
+
+                    <button type="submit">Enviar mensagem</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
 
 
     <!-- Rodapé -->
@@ -76,6 +145,8 @@
         </a>
     </div>
 
+    <!-- Documento E-mail automatico -->
+     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Documento JS -->
     <script src="script.js"></script>
 
