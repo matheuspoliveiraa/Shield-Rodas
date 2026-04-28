@@ -38,12 +38,15 @@
     <header id="inicio">
         <div class="container">
             <div id="logo">
-                <img src="./img/logoshield.png" alt="Logo da Shield">
+                <a href="./index.html">
+                    <img src="./img/logoInicio.png" alt="Logo da Shield">
+                </a>
             </div>
-            <!--Menu-->
+
             <nav>
                 <input type="checkbox" id="check">
-                <label for="check">&#9776;</label>
+                <label for="check" class="menu-mobile">&#9776;</label>
+
                 <ul>
                     <li><a href="./index.html" class="ativo">Inicio</a></li>
                     <li><a href="./produto.html">Produto</a></li>
@@ -124,35 +127,35 @@
     </section>
 
     <section class="comparacao">
-    <div class="container">
-        <h2>A diferença que pode salvar sua viagem</h2>
-        <p class="subtitulo">A escolha entre parar na estrada… ou seguir com segurança.</p>
+        <div class="container">
+            <h2>A diferença que pode salvar sua viagem</h2>
+            <p class="subtitulo">A escolha entre parar na estrada… ou seguir com segurança.</p>
 
-        <div class="cards-comparacao">
-            <!-- Sem cinta -->
-            <div class="box-comparacao sem">
-                <h3>Sem a cinta</h3>
-                <ul>
-                    <li>❌ Perda de controle com pneu vazio</li>
-                    <li>❌ Necessidade de parar imediatamente</li>
-                    <li>❌ Alto risco em rodovias</li>
-                    <li>❌ Danos ao pneu e à roda</li>
-                </ul>
-            </div>
+            <div class="cards-comparacao">
+                <!-- Sem cinta -->
+                <div class="box-comparacao sem">
+                    <h3>Sem a cinta</h3>
+                    <ul>
+                        <li>❌ Perda de controle com pneu vazio</li>
+                        <li>❌ Necessidade de parar imediatamente</li>
+                        <li>❌ Alto risco em rodovias</li>
+                        <li>❌ Danos ao pneu e à roda</li>
+                    </ul>
+                </div>
 
-            <!-- Com cinta -->
-            <div class="box-comparacao com">
-                <h3>Com a cinta</h3>
-                <ul>
-                    <li>✔️ Mantém estabilidade do veículo</li>
-                    <li>✔️ Possibilidade de continuar rodando</li>
-                    <li>✔️ Mais controle em emergências</li>
-                    <li>✔️ Proteção da roda e do sistema</li>
-                </ul>
+                <!-- Com cinta -->
+                <div class="box-comparacao com">
+                    <h3>Com a cinta</h3>
+                    <ul>
+                        <li>✔️ Mantém estabilidade do veículo</li>
+                        <li>✔️ Possibilidade de continuar rodando</li>
+                        <li>✔️ Mais controle em emergências</li>
+                        <li>✔️ Proteção da roda e do sistema</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Cartões -->
 
@@ -233,22 +236,37 @@
         </div>
     </address>
 
-    <!-- Rodapé -->
-
+    <!-- RODAPÉ -->
     <footer id="icons">
         <div class="container">
-            <div id="copyright">
-                <p>&#169;<span id="copyrightYear"></span> - Shield Rodas | Desde 2011</p>
+
+            <!-- LOGO / ICON -->
+            <div class="footer-logo">
+                <img src="./img/logoshield.png" alt="Shield Rodas">
             </div>
 
+            <!-- REDES -->
             <div id="redes">
-                <a href="https://www.instagram.com/shieldrodas/" target="_blank" rel="noopener noreferrer"><img
-                        src="./img/instagram.png" alt="logo instagram"></a>
+                <a href="https://www.instagram.com/shieldrodas/" target="_blank">
+                    <img src="./img/instagram.png" alt="Instagram">
+                </a>
 
-                <a href="https://www.youtube.com/@CintasShield" target="_blank" rel="noopener noreferrer"><img
-                        src="./img/youtube.png" alt="icon Youtube"></a>
+                <a href="https://www.youtube.com/@CintasShield" target="_blank">
+                    <img src="./img/youtube.png" alt="YouTube">
+                </a>
             </div>
 
+            <!-- LINKS -->
+            <div class="footer-links">
+                <a href="#">Termos de Uso e Política de Privacidade</a>
+                <a href="./admin.html" class="admin-link">Área administrativa</a>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div id="copyright">
+                <p>© <span id="copyrightYear"></span> Shield Rodas • Desde 2011</p>
+                <p>Segurança que roda com você!</p>
+            </div>
 
         </div>
     </footer>
@@ -266,4 +284,3 @@
 </body>
 
 </html>
-

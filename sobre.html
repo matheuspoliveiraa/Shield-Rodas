@@ -35,24 +35,27 @@
 <html class="sobre">
 <!--Cabeçalho-->
 <header id="inicio">
-    <div class="container">
-        <div id="logo">
-            <img src="./img/logoshield.png" alt="Logo da Shield">
-        </div>
-        <!--Menu-->
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check">&#9776;</label>
-            <ul>
-                <li><a href="./index.html">Inicio</a></li>
+        <div class="container">
+            <div id="logo">
+                <a href="./index.html">
+                    <img src="./img/logoInicio.png" alt="Logo da Shield">
+                </a>
+            </div>
+
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="menu-mobile">&#9776;</label>
+
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
                     <li><a href="./produto.html">Produto</a></li>
                     <li><a href="./certificacao.html">Certificados</a></li>
                     <li><a href="./FAQ.html">Perguntas Frequentes</a></li>
                     <li><a href="./contato.html" class="btncontato">Contato</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
 <!-- Destaque -->
 <section id="destaque">
@@ -197,22 +200,38 @@
 <!-- Rodapé -->
 
 <footer id="icons">
-    <div class="container">
-        <div id="copyright">
-            <p>&#169;<span id="copyrightYear"></span> - Shield Rodas | Desde 2011</p>
+        <div class="container">
+
+            <!-- LOGO / ICON -->
+            <div class="footer-logo">
+                <img src="./img/logoshield.png" alt="Shield Rodas">
+            </div>
+
+            <!-- REDES -->
+            <div id="redes">
+                <a href="https://www.instagram.com/shieldrodas/" target="_blank">
+                    <img src="./img/instagram.png" alt="Instagram">
+                </a>
+
+                <a href="https://www.youtube.com/@CintasShield" target="_blank">
+                    <img src="./img/youtube.png" alt="YouTube">
+                </a>
+            </div>
+
+            <!-- LINKS -->
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="./admin.html" class="admin-link">Área administrativa</a>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div id="copyright">
+                <p>© <span id="copyrightYear"></span> Shield Rodas • Desde 2011</p>
+                <p>Segurança que roda com você!</p>
+            </div>
+
         </div>
-
-        <div id="redes">
-            <a href="https://www.instagram.com/shieldrodas/" target="_blank" rel="noopener noreferrer"><img
-                    src="./img/instagram.png" alt="logo instagram"></a>
-
-            <a href="https://www.youtube.com/@CintasShield" target="_blank" rel="noopener noreferrer"><img
-                    src="./img/youtube.png" alt="icon Youtube"></a>
-        </div>
-
-
-    </div>
-</footer>
+    </footer>
 
 <!-- Topo do site -->
 <div id="topo">

@@ -1,3 +1,11 @@
+// BANCO DE DADOS
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const supabaseUrl = "https://tjcqfgqosnacpehnpntv.supabase.co";
+const supabaseKey = "sb_publishable_5G0uE57ffsDSRd5XPKpC6w_74TUQJmu";
+
+const banco = createClient(supabaseUrl, supabaseKey);
+
 //Atualização automática do ano
 
 // a linha abaixo captura a tag <span> e armazena o "conteúdo" na variável ano
@@ -61,61 +69,114 @@ items.forEach(item => {
 emailjs.init("4QFMaxt2Cj7nxtec1");
 
 const formulario = document.getElementById("form-contato");
+const mensagemFormulario = document.getElementById("mensagem-formulario");
+
+/* ANTI-SPAM - horário que abriu a página */
+const tempoAbertura = Date.now();
 
 if (formulario) {
 
-    formulario.addEventListener("submit", function (event) {
+    formulario.addEventListener("submit", async function (event) {
 
         event.preventDefault();
 
+        /* ANTI-SPAM */
+
+        // Honeypot invisível
+        if (formulario.elements["website"].value !== "") {
+            return;
+        }
+
+        // Espera mínima de 3 segundos
+        if (Date.now() - tempoAbertura < 3000) {
+            mensagemFormulario.innerText = "Aguarde alguns segundos antes de enviar.";
+            return;
+        }
+
+        // Limite de 1 minuto entre envios
+        const ultimoEnvio = localStorage.getItem("ultimoEnvio");
+
+        if (ultimoEnvio && Date.now() - ultimoEnvio < 60000) {
+            mensagemFormulario.innerText = "Você acabou de enviar uma mensagem. Por gentileza aguardar 1 minuto.";
+            mensagemFormulario.style.height = "auto";
+            mensagemFormulario.style.height =
+                mensagemFormulario.scrollHeight + "px";
+            return;
+        }
+
         const botao = formulario.querySelector("button");
 
-        botao.innerText = "Enviando...";
-        botao.disabled = true;
+        mensagemFormulario.innerText = "";
+        mensagemFormulario.style.height = "0";
+        mensagemFormulario.style.marginBottom = "0";
+        try {
 
-        Promise.all([
+            botao.innerText = "Enviando...";
+            botao.disabled = true;
 
-            /* EMAIL PARA CLIENTE */
-            emailjs.sendForm(
-                "service_6fbips8",
-                "template_aay06d1",
-                formulario
-            ),
+            const nome = formulario.elements["name"].value;
+            const email = formulario.elements["email"].value;
+            const assunto = formulario.elements["title"].value;
+            const mensagem = formulario.elements["message"].value;
 
-            /* EMAIL PARA SHIELD */
-            emailjs.sendForm(
-                "service_6fbips8",
-                "template_swxvjbd",
-                formulario
-            )
+            const { data, error } = await banco
+                .from("contatos")
+                .insert([
+                    {
+                        nome,
+                        email,
+                        assunto,
+                        mensagem
+                    }
+                ]);
 
-        ])
+            console.log("DATA:", data);
+            console.log("ERROR:", error);
 
-        .then(function () {
+            if (error) {
+                throw error;
+            }
+
+            await Promise.all([
+
+                emailjs.sendForm(
+                    "service_6fbips8",
+                    "template_aay06d1",
+                    formulario
+                ),
+
+                emailjs.sendForm(
+                    "service_6fbips8",
+                    "template_swxvjbd",
+                    formulario
+                )
+
+            ]);
 
             formulario.reset();
 
             botao.innerText = "✓ Mensagem enviada";
 
-            setTimeout(function () {
+            /* salva horário do envio */
+            localStorage.setItem("ultimoEnvio", Date.now());
+
+            setTimeout(() => {
                 botao.innerText = "Enviar mensagem";
                 botao.disabled = false;
             }, 3000);
 
-        })
+        } catch (erro) {
 
-        .catch(function (error) {
-
-            console.log(error);
+            console.log(erro);
 
             botao.innerText = "Erro ao enviar";
 
-            setTimeout(function () {
+            setTimeout(() => {
                 botao.innerText = "Enviar mensagem";
                 botao.disabled = false;
             }, 3000);
 
-        });
+        }
 
     });
 

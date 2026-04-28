@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Shield</title>
+
+    <link rel="shortcut icon" href="./img/pneuLogo.png" type="image/x-icon">
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS exclusivo do admin -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="pagina-admin">
+
+    <main class="admin-wrapper">
+
+        <!-- LOGIN -->
+        <section id="login" class="login-section">
+            <div class="login-card">
+
+                <img src="./img/logoshield.png" alt="Logo Shield Rodas" class="admin-logo">
+
+                <span class="tag-admin">ÁREA RESTRITA</span>
+
+                <h1>Painel Administrativo</h1>
+
+                <a href="./index.html" class="btn-voltar top">← Voltar ao site</a>
+
+                <p>
+                    Acesse para visualizar os contatos recebidos pelo site da Shield Rodas.
+                </p>
+
+                <form id="form-admin" class="form-login">
+                    <input type="email" id="email" placeholder="E-mail de acesso" required>
+                    <input type="password" id="senha" placeholder="Senha" required>
+
+                    <p id="mensagem-login" class="mensagem-login"></p>
+
+                    <button type="submit">Entrar no painel</button>
+                </form>
+
+                <small>Shield Rodas • Acesso interno</small>
+
+            </div>
+        </section>
+
+        <!-- PAINEL -->
+        <section id="painel" class="painel-section oculto">
+
+            <div class="painel-topo">
+                <div>
+                    <span class="tag-admin">ADMIN SHIELD</span>
+                    <h2>Contatos Recebidos</h2>
+                    <p>Visualize os leads enviados pelo formulário do site.</p>
+                </div>
+
+                <div class="painel-acoes">
+                <button type="button" class="btn-voltar" id="btn-voltar-site">← Voltar ao site</button>
+                <button class="btn-logout" id="btn-logout">Sair</button>
+                </div>
+            </div>
+
+            <div id="lista-contatos" class="lista-contatos">
+                <div class="mensagem-vazia">Carregando contatos...</div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL EXCLUIR -->
+<div id="modal-excluir" class="modal-excluir oculto">
+    <div class="modal-box">
+        <h3>Excluir contato</h3>
+        <p>Tem certeza que deseja excluir este contato?</p>
+
+        <div class="modal-acoes">
+            <button id="cancelar-excluir" class="btn-cancelar">Cancelar</button>
+            <button id="confirmar-excluir" class="btn-confirmar">Excluir</button>
+        </div>
+    </div>
+</div>
+
+    <script type="module" src="admin.js"></script>
+
+</body>
+
+</html>

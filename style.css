@@ -155,69 +155,123 @@ html {
 
 /* Smartphone portrait */
 
-/* Cabeçalho */
+/* CABEÇALHO MODERNO */
+
 header {
-    height: 70px;
-    background-color: var(--cinzaescuro);
+    width: 100%;
+    height: 78px;
+    background: rgba(20, 20, 20, 0.96);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    z-index: 50;
+    padding: 0 10px;
+    top: 0;
+}
+
+header .container {
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+
+#logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#logo a {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 #logo img {
-    width: 160px;
-    height: 110px;
-    margin-top: 10px;
-    margin-left: 10px;
+    width: auto;
+    height: 70px;
+    max-height: 70px;
+    display: block;
+    object-fit: contain;
 }
+
+/* MENU MOBILE */
 
 #check {
     display: none;
 }
 
-label {
-    color: rgba(253, 253, 253, 0.75);
-    font-size: 2.5rem;
-    font-weight: 900;
-    position: fixed;
-    right: 15px;
-    top: 5px;
+.menu-mobile {
+    color: var(--branco);
+    font-size: 2.2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    z-index: 1000;
 }
+
+/* MENU */
 
 nav ul {
-    height: 100vh;
-    background-color: rgba(74, 74, 74, 0.95);
     position: fixed;
-    top: 70px;
-    right: -65%;
-    width: 65%;
-    transition: all 0.5s;
-    z-index: 2;
+    top: 78px;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    min-height: calc(100vh - 78px);
+    background: rgba(20, 20, 20, 0.98);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    transition: 0.4s ease;
+    z-index: 999;
 }
 
-/* Ação para caixa check box */
-
-#check:checked~ul {
-    right: 0px;
+#check:checked ~ ul {
+    right: 0;
 }
 
 nav ul li {
     list-style: none;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--branco);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+    padding: 0;
 }
 
 nav ul li a {
-    text-decoration: none;
+    display: block;
+    padding: 18px 24px;
     color: var(--branco);
-    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
-    font-size: 1.0rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    text-shadow: none;
+    transition: 0.3s;
 }
 
+nav ul li a:hover,
 nav ul li a.ativo {
     color: var(--cinzaclaro);
+    background: rgba(255, 255, 255, 0.06);
 }
 
-.botao-ativo {
-    background: var(--preto);
+/* BOTÃO CONTATO */
+
+.btncontato {
+    display: block;
+    margin: 15px 20px;
+    padding: 12px 20px !important;
+    text-align: center;
+    background: var(--branco);
+    color: var(--preto) !important;
+    border-radius: 30px;
+    border: 1px solid var(--branco);
+}
+
+.btncontato:hover {
+    background: var(--cinzaclaro);
+    color: var(--preto) !important;
 }
 
 /* Principal */
@@ -225,19 +279,18 @@ nav ul li a.ativo {
 main {
     height: 60vh;
     position: relative;
-    height: 60vh;
     overflow: hidden;
+    isolation: isolate;
 
 }
 
 #bg-video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    transform: translate(-50%, -50%);
     z-index: -2;
 }
 
@@ -497,27 +550,93 @@ main .btn {
 
 /* Rodapé */
 
-#icons .container {
-    flex-direction: column-reverse;
-}
+/* RODAPÉ NOVO */
 
 #icons {
     text-align: center;
-    background-color: var(--cinzaescuro);
+    background: linear-gradient(180deg, #111, #000);
+    padding: 50px 20px 30px;
 }
 
-#icons p {
-    color: var(--branco);
-    margin-bottom: 30px;
-    font-size: 1.2rem;
-    text-shadow: 0px 5px 10px var(--preto), 0px 10px 10px rgba(0, 0, 0, 0.15), 0px 15px 15px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+#icons .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
-#icons img {
-    height: 40px;
-    width: 40px;
-    margin: 20px 3px;
-    border-radius: 20px;
+/* LOGO */
+
+.footer-logo img {
+    width: 130px;
+    opacity: 0.85;
+}
+
+/* REDES */
+
+#redes {
+    display: flex;
+    gap: 18px;
+}
+
+#redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+#redes a:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+#redes img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
+
+/* LINKS */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* ADMIN DISCRETO */
+
+.admin-link {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.admin-link:hover {
+    opacity: 1;
+}
+
+/* TEXTO */
+
+#copyright p {
+    color: #888;
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 /* PÁGINA SOBRE */
@@ -1156,7 +1275,30 @@ main .btn {
     background-size: 18px;
 }
 
+.campo-fake {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}
 
+#mensagem-formulario {
+    font-size: 14px;
+    color: #ff3b3b;
+    font-weight: 600;
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease, margin 0.3s ease;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.btncontato.ativo {
+    background: #b5b5b5;
+    color: #000 !important;
+    border-color: #b5b5b5;
+}
 
 
 /* Fim smartphone portrait*/
@@ -1167,12 +1309,6 @@ main .btn {
     /* Layout */
     .container {
         max-width: 540px;
-    }
-
-    /* Cabeçalho */
-    nav ul {
-        width: 40%;
-        right: -40%;
     }
 
     /* Principal */
@@ -1270,11 +1406,7 @@ main .btn {
         height: 80px;
     }
 
-    /* Cabeçalho */
-    nav ul {
-        width: 40%;
-        right: -40%;
-    }
+    
 
     /* Principal */
     main h1 {
@@ -1362,7 +1494,6 @@ main .btn {
     }
 
 
-
 }
 
 
@@ -1439,43 +1570,64 @@ main .btn {
         justify-content: space-between;
     }
 
-    /* Cabeçalho */
-    header {
-        height: 90px;
-    }
+    /* CABEÇALHO DESKTOP */
 
-    #logo img {
-        width: 210px;
-        height: 150px;
-    }
+header {
+    height: 90px;
+    position: relative;
+}
 
-    label {
-        display: none;
-    }
+header .container {
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    nav ul {
-        position: static;
-        width: 100%;
-        height: auto;
-        background-color: transparent;
-        margin-top: 21px;
-    }
+#logo img {
+    width: auto;
+    height: 100px;
+    max-height: 100px;
+}
 
-    nav ul li {
-        border: 0;
-        float: left;
+.menu-mobile {
+    display: none;
+}
 
-    }
+nav ul {
+    position: static;
+    width: auto;
+    max-width: none;
+    min-height: auto;
+    background: transparent;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: none;
+}
 
-    nav ul li a {
-        font-size: 1.1rem;
-        font-weight: bold;
+nav ul li {
+    border: none;
+    padding: 0;
+    float: none;
+}
 
-    }
+nav ul li a {
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 1rem;
+}
 
-    nav ul li a:hover {
-        color: var(--cinzaclaro)
-    }
+nav ul li a:hover,
+nav ul li a.ativo {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--branco);
+}
+
+.btncontato {
+    margin: 0 0 0 8px;
+    padding: 11px 24px !important;
+}
 
     /* Principal */
 

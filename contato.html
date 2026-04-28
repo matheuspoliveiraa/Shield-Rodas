@@ -34,19 +34,21 @@
     <header id="inicio">
         <div class="container">
             <div id="logo">
-                <img src="./img/logoshield.png" alt="Logo da Shield">
+                <a href="./index.html">
+                    <img src="./img/logoInicio.png" alt="Logo da Shield">
+                </a>
             </div>
-            <!--Menu-->
+
             <nav>
                 <input type="checkbox" id="check">
-                <label for="check">&#9776;</label>
+                <label for="check" class="menu-mobile">&#9776;</label>
+
                 <ul>
                     <li><a href="./index.html">Inicio</a></li>
                     <li><a href="./produto.html">Produto</a></li>
                     <li><a href="./certificacao.html">Certificados</a></li>
                     <li><a href="./FAQ.html">Perguntas Frequentes</a></li>
-                    <li><a href="./contato.html" class="btncontato botao-ativo">Contato</a></li>
-
+                    <li><a href="./contato.html" class="btncontato ativo">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -112,6 +114,11 @@
 
                     <textarea name="message" rows="5" placeholder="Informe seu veículo e/ou sua dúvida..."></textarea>
 
+                    <div class="campo-fake">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <p id="mensagem-formulario"></p>
                     <button type="submit">Enviar mensagem</button>
                 </form>
             </div>
@@ -123,17 +130,35 @@
     <!-- Rodapé -->
     <footer id="icons">
         <div class="container">
-            <div id="copyright">
-                <p>&#169;<span id="copyrightYear"></span> - Shield Rodas | Desde 2011</p>
+
+            <!-- LOGO / ICON -->
+            <div class="footer-logo">
+                <img src="./img/logoshield.png" alt="Shield Rodas">
             </div>
+
+            <!-- REDES -->
             <div id="redes">
-                <a href="https://www.instagram.com/shieldrodas/" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/instagram.png" alt="logo instagram">
+                <a href="https://www.instagram.com/shieldrodas/" target="_blank">
+                    <img src="./img/instagram.png" alt="Instagram">
                 </a>
-                <a href="https://www.youtube.com/@CintasShield" target="_blank" rel="noopener noreferrer">
-                    <img src="./img/youtube.png" alt="icon Youtube">
+
+                <a href="https://www.youtube.com/@CintasShield" target="_blank">
+                    <img src="./img/youtube.png" alt="YouTube">
                 </a>
             </div>
+
+            <!-- LINKS -->
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="./admin.html" class="admin-link">Área administrativa</a>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div id="copyright">
+                <p>© <span id="copyrightYear"></span> Shield Rodas • Desde 2011</p>
+                <p>Segurança que roda com você!</p>
+            </div>
+
         </div>
     </footer>
 
@@ -146,9 +171,9 @@
     </div>
 
     <!-- Documento E-mail automatico -->
-     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <!-- Documento JS -->
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Documento -->
+    <script type="module" src="script.js"></script>
 
 </body>
 
