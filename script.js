@@ -15,7 +15,9 @@ let ano = document.getElementById('copyrightYear')
 let anoAtual = new Date().getFullYear()
 
 //a linha abaixo insere o conteúdo da variável anoAtual em ano (variávelrelacionada a tah <span>)
-ano.textContent = anoAtual
+if (ano) {
+    ano.textContent = anoAtual;
+}
 
 
 /**  Recolher menu na rolagem **/
@@ -42,31 +44,41 @@ links.forEach(link => {
 
 const items = document.querySelectorAll(".faq-item");
 
-items.forEach(item => {
-    const button = item.querySelector(".faq-question");
-    const answer = item.querySelector(".faq-answer");
+if (items.length > 0) {
+    items.forEach(item => {
+        const button = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
 
-    button.addEventListener("click", () => {
-        const isOpen = item.classList.contains("active");
+        if (button && answer) {
+            button.addEventListener("click", () => {
+                const isOpen = item.classList.contains("active");
 
-        items.forEach(i => {
-            i.classList.remove("active");
-            i.querySelector(".faq-answer").style.height = "0px";
-        });
+                items.forEach(i => {
+                    i.classList.remove("active");
 
-        if (!isOpen) {
-            item.classList.add("active");
-            answer.style.height = answer.scrollHeight + "px";
+                    const resposta = i.querySelector(".faq-answer");
+                    if (resposta) {
+                        resposta.style.maxHeight = "0px";
+                    }
+                });
+
+                if (!isOpen) {
+                    item.classList.add("active");
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
         }
     });
-});
+}
 
 
 /** E-MAIL AUTOMATICO */
 
 /** E-MAIL AUTOMATICO */
 
-emailjs.init("4QFMaxt2Cj7nxtec1");
+if (typeof emailjs !== "undefined") {
+    emailjs.init("4QFMaxt2Cj7nxtec1");
+}
 
 const formulario = document.getElementById("form-contato");
 const mensagemFormulario = document.getElementById("mensagem-formulario");

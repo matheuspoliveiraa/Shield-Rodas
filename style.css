@@ -1151,7 +1151,7 @@ main .btn {
 }
 
 .subtitulo {
-    color: var(--cinzaclaro);
+    color: var(--branco);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -1300,6 +1300,51 @@ main .btn {
     border-color: #b5b5b5;
 }
 
+/* PÁGINA TERMOS E PRIVACIDADE */
+
+.termos {
+    background: url(./img/backgoundPrincipal.png);
+    background-size: cover;
+    background-position: center;
+    padding: 70px 20px;
+    color: var(--branco);
+}
+
+.termos-container {
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.termos h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 15px 0 35px;
+    text-align: center;
+    text-shadow: 0px 5px 10px var(--preto);
+}
+
+.termos-box {
+    background: rgba(0, 0, 0, 0.88);
+    border: 1px solid var(--cinzamedio);
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 22px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+.termos-box h2 {
+    color: var(--cinzaclaro);
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.termos-box p {
+    color: var(--branco);
+    line-height: 1.7;
+    margin-bottom: 14px;
+    text-align: justify;
+}
 
 /* Fim smartphone portrait*/
 
@@ -1493,6 +1538,19 @@ main .btn {
         padding: 35px;
     }
 
+    /* PÁGINA DE TERMOS E PRIVACIDADE */
+
+    .termos {
+        padding: 50px 14px;
+    }
+
+    .termos-box {
+        padding: 22px 18px;
+    }
+
+    .termos-box p {
+        font-size: 0.95rem;
+    }
 
 }
 
