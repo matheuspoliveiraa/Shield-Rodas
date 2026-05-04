@@ -3,6 +3,9 @@
 Bem-vindo ao repositório oficial do site da **Shield Rodas**.  
 Este projeto foi desenvolvido com o objetivo de apresentar a empresa, seus produtos e serviços de forma moderna, elegante e focada em transmitir **segurança, tecnologia e confiança**.
 
+![GitHub License](https://img.shields.io/github/license/matheuspoliveiraa/Shield-Rodas)
+
+
 <p>
     <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
