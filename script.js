@@ -19,6 +19,55 @@ if (ano) {
     ano.textContent = anoAtual;
 }
 
+/** Fechar os Cookies */
+const cookiePopup = document.getElementById("cookiePopup");
+const aceitarCookies = document.getElementById("aceitarCookies");
+
+const tempoExpiracao = 30 * 24 * 60 * 60 * 1000; // 30 dias
+
+const cookiesSalvos = localStorage.getItem("cookiesAceitos");
+const dataAceite = localStorage.getItem("cookiesData");
+
+const agora = Date.now();
+
+// Verifica se já aceitou e ainda está dentro dos 30 dias
+if(cookiesSalvos === "true" && dataAceite){
+
+    const diferenca = agora - Number(dataAceite);
+
+    if(diferenca < tempoExpiracao){
+
+        if(cookiePopup){
+            cookiePopup.style.display = "none";
+        }
+
+    }else{
+
+        // expirou, remove para mostrar novamente
+        localStorage.removeItem("cookiesAceitos");
+        localStorage.removeItem("cookiesData");
+
+    }
+
+}
+
+if(cookiePopup && aceitarCookies){
+
+    aceitarCookies.addEventListener("click", () => {
+
+        // salva aceite + data
+        localStorage.setItem("cookiesAceitos", "true");
+        localStorage.setItem("cookiesData", Date.now());
+
+        cookiePopup.classList.add("sumir");
+
+        setTimeout(() => {
+            cookiePopup.style.display = "none";
+        }, 400);
+
+    });
+
+}
 
 /**  Recolher menu na rolagem **/
 // Capturar o evento de rolagem diretamente no JS

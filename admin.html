@@ -11,8 +11,7 @@
     <!-- Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- CSS exclusivo do admin -->
@@ -64,10 +63,14 @@
                 </div>
 
                 <div class="painel-acoes">
-                <button type="button" class="btn-voltar" id="btn-voltar-site">← Voltar ao site</button>
-                <button class="btn-logout" id="btn-logout">Sair</button>
+                    <button type="button" class="btn-voltar" id="btn-voltar-site">← Voltar ao site</button>
+                    <button class="btn-logout" id="btn-logout">Sair</button>
                 </div>
             </div>
+
+             <div class="busca-admin">
+                    <input type="text" id="buscar-contato" placeholder="Buscar por nome ou e-mail...">
+                </div>
 
             <div id="lista-contatos" class="lista-contatos">
                 <div class="mensagem-vazia">Carregando contatos...</div>
@@ -78,17 +81,56 @@
     </main>
 
     <!-- MODAL EXCLUIR -->
-<div id="modal-excluir" class="modal-excluir oculto">
-    <div class="modal-box">
-        <h3>Excluir contato</h3>
-        <p>Tem certeza que deseja excluir este contato?</p>
+    <div id="modal-excluir" class="modal-excluir oculto">
+        <div class="modal-box">
+            <h3>Excluir contato</h3>
+            <p>Tem certeza que deseja excluir este contato?</p>
 
-        <div class="modal-acoes">
-            <button id="cancelar-excluir" class="btn-cancelar">Cancelar</button>
-            <button id="confirmar-excluir" class="btn-confirmar">Excluir</button>
+            <div class="modal-acoes">
+                <button id="cancelar-excluir" class="btn-cancelar">Cancelar</button>
+                <button id="confirmar-excluir" class="btn-confirmar">Excluir</button>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- MODAL EDITAR -->
+    <div id="modal-editar" class="modal-editar oculto">
+        <div class="modal-editar-box">
+            <h3>Editar contato</h3>
+            <p>Altere os dados solicitados pelo titular ou pela equipe administrativa.</p>
+
+            <input type="hidden" id="editar-id">
+
+            <label>Nome</label>
+            <input type="text" id="editar-nome">
+
+            <label>E-mail</label>
+            <input type="email" id="editar-email">
+
+            <label>Assunto</label>
+            <select id="editar-assunto" required>
+                <option value="">Selecione...</option>
+                <option value="Orçamento">Orçamento</option>
+                <option value="Garantia">Garantia</option>
+                <option value="Dúvidas sobre o produto">Dúvidas sobre o produto</option>
+                <option value="Suporte">Suporte</option>
+                <option value="Outros">Outros</option>
+            </select>
+
+            <label>Mensagem</label>
+            <textarea id="editar-mensagem"></textarea>
+
+            <div class="modal-acoes">
+                <button id="cancelar-editar" class="btn-cancelar">Cancelar</button>
+                <button id="confirmar-editar" class="btn-confirmar-editar">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-sucesso" class="toast-sucesso">
+        <span>✓ Contato salvo com sucesso</span>
+        <div class="toast-barra"></div>
+    </div>
 
     <script type="module" src="admin.js"></script>
 

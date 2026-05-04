@@ -28,6 +28,7 @@ const btnLogout = document.getElementById("btn-logout");
 const mensagemLogin = document.getElementById("mensagem-login");
 const emailInput = document.getElementById("email");
 const senhaInput = document.getElementById("senha");
+let contatosCarregados = [];
 
 formAdmin.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -106,6 +107,40 @@ function mostrarPainel() {
     painel.classList.remove("oculto");
 }
 
+function calcularDiasRestantes(dataCriacao, enviado) {
+
+    if (enviado) {
+        return `
+        <span class="status-icon sucesso"></span>
+        E-mail de 7 dias enviado
+        `;
+    }
+
+    const dataContato = new Date(dataCriacao);
+    const dataEnvio = new Date(dataContato);
+
+    dataEnvio.setDate(dataEnvio.getDate() + 7);
+
+    const hoje = new Date();
+    const diferenca = dataEnvio - hoje;
+
+    if (diferenca <= 0) {
+        return `
+        <span class="status-icon pendente"></span>
+        Será enviado no próximo ciclo
+        `;
+    }
+
+    const dias = Math.ceil(
+        diferenca / (1000 * 60 * 60 * 24)
+    );
+
+    return `
+    <span class="status-icon pendente"></span>
+    Faltam ${dias} dia(s) para o envio do E-mail.
+    `;
+}
+
 async function carregarContatos() {
     listaContatos.innerHTML = `<div class="mensagem-vazia">Carregando contatos...</div>`;
 
@@ -125,6 +160,8 @@ async function carregarContatos() {
         return;
     }
 
+    contatosCarregados = data;
+
     listaContatos.innerHTML = "";
 
     data.forEach(contato => {
@@ -133,14 +170,27 @@ async function carregarContatos() {
     <div class="contato-topo">
         <h3>${contato.nome || "Sem nome"}</h3>
 
-        <button class="btn-excluir" data-id="${contato.id}">
-            Excluir
-        </button>
+        <div class="contato-acoes">
+    <button class="btn-editar" data-id="${contato.id}">
+        Editar
+    </button>
+
+    <button class="btn-excluir" data-id="${contato.id}">
+        Excluir
+    </button>
+</div>
     </div>
 
     <div class="contato-info">
         <p><strong>E-mail:</strong> ${contato.email || "Não informado"}</p>
         <p><strong>Assunto:</strong> ${contato.assunto || "Não informado"}</p>
+
+       <p class="status-email">
+    ${calcularDiasRestantes(
+            contato.created_at,
+            contato.email_7_dias_enviado
+        )}
+</p>
 
         <div class="mensagem">
             <p><strong>Mensagem:</strong></p>
@@ -161,12 +211,39 @@ let idParaExcluir = null;
 const modal = document.getElementById("modal-excluir");
 const btnConfirmar = document.getElementById("confirmar-excluir");
 const btnCancelar = document.getElementById("cancelar-excluir");
+const modalEditar = document.getElementById("modal-editar");
+const confirmarEditar = document.getElementById("confirmar-editar");
+const cancelarEditar = document.getElementById("cancelar-editar");
+const campoBusca = document.getElementById("buscar-contato");
 
 /* abrir modal */
 document.addEventListener("click", (e) => {
+
+    /* EXCLUIR */
     if (e.target.classList.contains("btn-excluir")) {
         idParaExcluir = e.target.getAttribute("data-id");
         modal.classList.remove("oculto");
+    }
+
+    /* EDITAR */
+    if (e.target.classList.contains("btn-editar")) {
+
+        const idContato = e.target.getAttribute("data-id");
+
+        const contato = contatosCarregados.find(item => String(item.id) === String(idContato));
+
+        if (!contato) {
+            console.log("Contato não encontrado.");
+            return;
+        }
+
+        document.getElementById("editar-id").value = contato.id;
+        document.getElementById("editar-nome").value = contato.nome || "";
+        document.getElementById("editar-email").value = contato.email || "";
+        document.getElementById("editar-assunto").value = contato.assunto || "";
+        document.getElementById("editar-mensagem").value = contato.mensagem || "";
+
+        modalEditar.classList.remove("oculto");
     }
 });
 
@@ -226,6 +303,34 @@ async function verificarLogin() {
     }
 }
 
+cancelarEditar.addEventListener("click", () => {
+    modalEditar.classList.add("oculto");
+});
+
+confirmarEditar.addEventListener("click", async () => {
+
+    const id = document.getElementById("editar-id").value;
+
+    const { error } = await banco
+        .from("contatos")
+        .update({
+            nome: document.getElementById("editar-nome").value,
+            email: document.getElementById("editar-email").value,
+            assunto: document.getElementById("editar-assunto").value,
+            mensagem: document.getElementById("editar-mensagem").value
+        })
+        .eq("id", id);
+
+    if (error) {
+        console.log(error);
+        return;
+    }
+
+    modalEditar.classList.add("oculto");
+    carregarContatos();
+    mostrarToastSucesso();
+});
+
 verificarLogin();
 
 const btnVoltarSite = document.getElementById("btn-voltar-site");
@@ -236,3 +341,44 @@ if (btnVoltarSite) {
         window.location.href = "./index.html";
     });
 }
+
+function mostrarToastSucesso() {
+    const toast = document.getElementById("toast-sucesso");
+
+    if (!toast) return;
+
+    toast.classList.remove("ativo");
+
+    void toast.offsetWidth;
+
+    toast.classList.add("ativo");
+
+    setTimeout(() => {
+        toast.classList.remove("ativo");
+    }, 3000);
+}
+
+campoBusca.addEventListener("input", function () {
+
+    const termo = this.value.toLowerCase().trim();
+
+    const cards = document.querySelectorAll(".contato-card");
+
+    cards.forEach(card => {
+
+        const nome = card.querySelector("h3").textContent.toLowerCase();
+
+        const email = card
+            .querySelector(".contato-info p")
+            .textContent
+            .toLowerCase();
+
+        const encontrou =
+            nome.includes(termo) ||
+            email.includes(termo);
+
+        card.style.display = encontrou ? "block" : "none";
+
+    });
+
+});

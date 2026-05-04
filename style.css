@@ -228,7 +228,7 @@ nav ul {
     z-index: 999;
 }
 
-#check:checked ~ ul {
+#check:checked~ul {
     right: 0;
 }
 
@@ -432,6 +432,7 @@ main .btn {
 #sobre iframe {
     width: 340px;
     height: 191px;
+    border: none;
 }
 
 #sobre p {
@@ -1303,7 +1304,7 @@ main .btn {
 /* PÁGINA TERMOS E PRIVACIDADE */
 
 .termos {
-    background: url(./img/backgoundPrincipal.png);
+    background: var(--cinzaescuro);
     background-size: cover;
     background-position: center;
     padding: 70px 20px;
@@ -1345,6 +1346,155 @@ main .btn {
     margin-bottom: 14px;
     text-align: justify;
 }
+
+.aceite-termos {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+
+    margin-top: 1.2rem;
+    padding: 1rem 1.2rem;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+
+    color: var(--branco);
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.aceite-termos:hover {
+    border-color: var(--cinzaclaro);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.aceite-termos input[type="checkbox"] {
+    min-width: 18px;
+    width: 18px;
+    height: 18px;
+
+    margin-top: 0.20rem;
+    cursor: pointer;
+
+    accent-color: var(--cinzamedio);
+}
+
+.aceite-termos a {
+    color: var(--branco);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: 0.3s ease;
+}
+
+.aceite-termos a:hover {
+    color: var(--cinzaclaro);
+}
+
+.cookie-popup {
+    position: fixed;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    width: min(92%, 520px);
+    padding: 1rem;
+
+    animation: cookieUp 0.6s ease forwards;
+}
+
+.cookie-content {
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 1.4rem;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    color: var(--branco);
+}
+
+.cookie-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.cookie-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.cookie-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cookie-actions a {
+    color: var(--cinzaclaro);
+    font-size: 0.85rem;
+    text-decoration: underline;
+}
+
+.cookie-actions button {
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 999px;
+
+    background: var(--branco);
+    color: var(--preto);
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.cookie-actions button:hover {
+    background: var(--cinzaclaro);
+    transform: translateY(-2px);
+}
+
+.cookie-popup.sumir {
+    animation: cookieDown 0.4s ease forwards;
+}
+
+@keyframes cookieUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes cookieDown {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, 30px);
+    }
+}
+
 
 /* Fim smartphone portrait*/
 
@@ -1451,7 +1601,7 @@ main .btn {
         height: 80px;
     }
 
-    
+
 
     /* Principal */
     main h1 {
@@ -1552,6 +1702,8 @@ main .btn {
         font-size: 0.95rem;
     }
 
+
+
 }
 
 
@@ -1630,62 +1782,62 @@ main .btn {
 
     /* CABEÇALHO DESKTOP */
 
-header {
-    height: 90px;
-    position: relative;
-}
+    header {
+        height: 90px;
+        position: relative;
+    }
 
-header .container {
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
+    header .container {
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-#logo img {
-    width: auto;
-    height: 100px;
-    max-height: 100px;
-}
+    #logo img {
+        width: auto;
+        height: 100px;
+        max-height: 100px;
+    }
 
-.menu-mobile {
-    display: none;
-}
+    .menu-mobile {
+        display: none;
+    }
 
-nav ul {
-    position: static;
-    width: auto;
-    max-width: none;
-    min-height: auto;
-    background: transparent;
-    border-left: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: none;
-}
+    nav ul {
+        position: static;
+        width: auto;
+        max-width: none;
+        min-height: auto;
+        background: transparent;
+        border-left: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: none;
+    }
 
-nav ul li {
-    border: none;
-    padding: 0;
-    float: none;
-}
+    nav ul li {
+        border: none;
+        padding: 0;
+        float: none;
+    }
 
-nav ul li a {
-    padding: 10px 16px;
-    border-radius: 30px;
-    font-size: 1rem;
-}
+    nav ul li a {
+        padding: 10px 16px;
+        border-radius: 30px;
+        font-size: 1rem;
+    }
 
-nav ul li a:hover,
-nav ul li a.ativo {
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--branco);
-}
+    nav ul li a:hover,
+    nav ul li a.ativo {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--branco);
+    }
 
-.btncontato {
-    margin: 0 0 0 8px;
-    padding: 11px 24px !important;
-}
+    .btncontato {
+        margin: 0 0 0 8px;
+        padding: 11px 24px !important;
+    }
 
     /* Principal */
 
