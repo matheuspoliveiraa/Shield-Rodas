@@ -61,7 +61,7 @@ form {
 /* Cartão */
 .card {
     width: 342px;
-    height: 480px;
+    height: 435px;
     background-color: var(--preto);
     margin-bottom: 50px;
     border: 2px solid var(--branco);
@@ -420,7 +420,7 @@ main .btn {
 
 #sobre {
     padding: 40px 13px;
-    background: url(./img/backgound2.jpg);
+    background: url(./img/backgoundContato.png);
     background-size: cover;
 }
 
@@ -1093,7 +1093,7 @@ main .btn {
 }
 
 .box-comparacao {
-    background: var(--cinzaescuro);
+    background: var(--preto);
     padding: 30px;
     border-radius: 12px;
     width: 100%;
